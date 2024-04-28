@@ -70,42 +70,42 @@ if __name__ == '__main__':
 
     # ------------------------ Stage 1: warm up ------------------------
     logging.info("\n ---------------------Stage 1: warm up---------------------")
-    # if args.warm:
-    #     for rnd in range(args.s1):
-    #         w_locals, loss_locals = [], []
-    #         for idx in user_id:  # training over the subset
-    #             local = trainer_locals[idx]
-    #             w_local, loss_local = local.train_LA(
-    #                 net=copy.deepcopy(netglob).to(args.device), writer=writer)
-    #
-    #             # store every updated model
-    #             w_locals.append(copy.deepcopy(w_local))
-    #             loss_locals.append(copy.deepcopy(loss_local))
-    #             print(f"client {idx} loss: {loss_local}")
-    #
-    #         w_locals_last = copy.deepcopy(w_locals)
-    #         dict_len = [len(dict_users[idx]) for idx in user_id]
-    #         w_glob_fl = FedAvg(w_locals, dict_len)
-    #         netglob.load_state_dict(copy.deepcopy(w_glob_fl))
-    #
-    #         pred = globaltest(copy.deepcopy(netglob).to(
-    #             args.device), dataset_test, args)
-    #         acc = accuracy_score(dataset_test.targets, pred)
-    #         bacc = balanced_accuracy_score(dataset_test.targets, pred)
-    #         cm = confusion_matrix(dataset_test.targets, pred)
-    #         logging.info(
-    #             "******** round: %d, acc: %.4f, bacc: %.4f ********" % (rnd, acc, bacc))
-    #         logging.info(cm)
-    #         writer.add_scalar(f'test/acc', acc, rnd)
-    #         writer.add_scalar(f'test/bacc', bacc, rnd)
-    #
-    #         # save model
-    #         if bacc > best_performance:
-    #             best_performance = bacc
-    #         logging.info(f'best bacc: {best_performance}, now bacc: {bacc}')
-    #         logging.info('\n')
-    #     torch.save(netglob.state_dict(),  models_dir +
-    #                f'/stage1_model_{rnd}.pth')
+    if args.warm:
+        for rnd in range(args.s1):
+            w_locals, loss_locals = [], []
+            for idx in user_id:  # training over the subset
+                local = trainer_locals[idx]
+                w_local, loss_local = local.train_LA(
+                    net=copy.deepcopy(netglob).to(args.device), writer=writer)
+
+                # store every updated model
+                w_locals.append(copy.deepcopy(w_local))
+                loss_locals.append(copy.deepcopy(loss_local))
+                print(f"client {idx} loss: {loss_local}")
+
+            w_locals_last = copy.deepcopy(w_locals)
+            dict_len = [len(dict_users[idx]) for idx in user_id]
+            w_glob_fl = FedAvg(w_locals, dict_len)
+            netglob.load_state_dict(copy.deepcopy(w_glob_fl))
+
+            pred = globaltest(copy.deepcopy(netglob).to(
+                args.device), dataset_test, args)
+            acc = accuracy_score(dataset_test.targets, pred)
+            bacc = balanced_accuracy_score(dataset_test.targets, pred)
+            cm = confusion_matrix(dataset_test.targets, pred)
+            logging.info(
+                "******** round: %d, acc: %.4f, bacc: %.4f ********" % (rnd, acc, bacc))
+            logging.info(cm)
+            writer.add_scalar(f'test/acc', acc, rnd)
+            writer.add_scalar(f'test/bacc', bacc, rnd)
+
+            # save model
+            if bacc > best_performance:
+                best_performance = bacc
+            logging.info(f'best bacc: {best_performance}, now bacc: {bacc}')
+            logging.info('\n')
+        torch.save(netglob.state_dict(),  models_dir +
+                   f'/stage1_model_{rnd}.pth')
 
     #  ------------------------ client selection ------------------------
     logging.info("\n ---------------------client selection---------------------")

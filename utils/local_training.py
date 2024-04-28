@@ -63,7 +63,7 @@ class LocalUpdate(object):
     def train_LA(self, net, writer):
         net.train()
         # set the optimizer
-        self.optimizer = torch.optim.Adam(
+        optimizer = torch.optim.Adam(
             net.parameters(), lr=self.lr, betas=(0.9, 0.999), weight_decay=5e-4)
 
         # train and update
@@ -77,9 +77,9 @@ class LocalUpdate(object):
                 logits = net(images)
                 loss = ce_criterion(logits, labels)
 
-                self.optimizer.zero_grad()
+                optimizer.zero_grad()
                 loss.backward()
-                self.optimizer.step()
+                optimizer.step()
 
                 batch_loss.append(loss.item())
                 writer.add_scalar(
@@ -95,7 +95,7 @@ class LocalUpdate(object):
         student_net.train()
         teacher_net.eval()
         # set the optimizer
-        self.optimizer = torch.optim.Adam(
+        optimizer = torch.optim.Adam(
             student_net.parameters(), lr=self.lr, betas=(0.9, 0.999), weight_decay=5e-4)
 
         # train and update
@@ -114,9 +114,9 @@ class LocalUpdate(object):
 
                 loss = criterion(logits, labels, soft_label, weight_kd)
 
-                self.optimizer.zero_grad()
+                optimizer.zero_grad()
                 loss.backward()
-                self.optimizer.step()
+                optimizer.step()
 
                 batch_loss.append(loss.item())
                 writer.add_scalar(
@@ -128,4 +128,36 @@ class LocalUpdate(object):
         return student_net.state_dict(), np.array(epoch_loss).mean()
 
     
-  
+class LocalUpdate_FedAvg(object):
+    def __init__(self, args, dataset=None, idxs=None):
+        self.args = args
+        self.loss_func = nn.CrossEntropyLoss()
+        self.selected_clients = []
+        self.ldr_train = DataLoader(DatasetSplit(dataset, idxs), batch_size=args.batch_size, shuffle=True)
+
+    def train(self, net):
+        net.train()
+        # train and update
+        optimizer = torch.optim.SGD(net.parameters(), lr=self.args.base_lr, momentum=self.args.momentum)
+
+        epoch_loss = []
+        for iter in range(self.args.local_ep):
+            batch_loss = []
+            for batch_idx, (_, images, labels) in enumerate(self.ldr_train):
+                images, labels = images.to(self.args.device), labels.to(self.args.device)
+                net.zero_grad()
+                log_probs = net(images)
+                loss = self.loss_func(log_probs, labels)
+                loss.backward()
+                optimizer.step()
+
+                # verbose print
+                verbose = True
+
+                if verbose and batch_idx % 10 == 0:
+                    print('Update Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
+                        iter, batch_idx * len(images), len(self.ldr_train.dataset),
+                               100. * batch_idx / len(self.ldr_train), loss.item()))
+                batch_loss.append(loss.item())
+            epoch_loss.append(sum(batch_loss)/len(batch_loss))
+        return net.state_dict(), sum(epoch_loss) / len(epoch_loss)

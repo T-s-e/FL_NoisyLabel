@@ -125,6 +125,7 @@ def add_attribute_noise(args, y_train, y_staining, dict_users, staining_noise_ra
             num_noisy_samples = int(staining_noise_rate[stain] * len(stain_indices))
             noisy_samples = np.random.choice(stain_indices, num_noisy_samples, replace=False)
             for sample in noisy_samples:
+                # logging.info(f"add noise!!!")
                 y_train_noisy[user_samples_idx[sample]] = 1 - y_train[user_samples_idx[sample]]
 
 

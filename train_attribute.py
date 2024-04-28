@@ -54,7 +54,9 @@ if __name__ == '__main__':
     y_staining = np.array(dataset_train.staining)
 
     # specify the noise rate for each staining
-    staining_noise_rate = [0.4, 0.4, 0.3, 0.2, 0.1]
+    # staining_noise_rate = [0.4, 0.4, 0.3, 0.2, 0.1]
+    staining_noise_rate = [0.7, 0.7, 0.5, 0.3, 0.1]
+    logging.info(f"staining_noise_rate: {staining_noise_rate}")
 
     y_train_noisy, gamma_s, real_noise_level = add_attribute_noise(
         args, y_train, y_staining, dict_users, staining_noise_rate)
@@ -176,9 +178,11 @@ if __name__ == '__main__':
         for idx in user_id:  # training over the subset
             local = trainer_locals[idx]
             if idx in clean_clients:
+                logging.info('clean clients')
                 w_local, loss_local = local.train_LA(
                     net=copy.deepcopy(netglob).to(args.device), writer=writer)
             elif idx in noisy_clients:
+                logging.info('noisy clients')
                 w_local, loss_local = local.train_FedNoRo(
                     student_net=copy.deepcopy(netglob).to(args.device), teacher_net=copy.deepcopy(netglob).to(args.device), writer=writer, weight_kd=weight_kd)
             # store every updated model

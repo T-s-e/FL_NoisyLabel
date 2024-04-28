@@ -11,7 +11,7 @@ def args_parser():
 
     # basic setting
     parser.add_argument('--exp', type=str,
-                        default='Fed', help='experiment name')
+                        default='FedAvg', help='experiment name')
     parser.add_argument('--dataset', type=str,
                         default='Camelyon17', help='dataset name')
     parser.add_argument('--model', type=str,
@@ -21,6 +21,8 @@ def args_parser():
     parser.add_argument('--base_lr', type=float,  default=3e-4,
                         help='base learning rate')
     parser.add_argument('--pretrained', type=int,  default=0)
+    parser.add_argument('--momentum', type=float, default=0.5, help="SGD momentum (default: 0.5)")
+
 
     # for FL
     parser.add_argument('--n_clients', type=int,  default=20,
@@ -31,9 +33,9 @@ def args_parser():
     parser.add_argument('--alpha_dirichlet', type=float,
                         default=2.0, help='parameter for non-iid')
     parser.add_argument('--local_ep', type=int, default=5, help='local epoch')
-    parser.add_argument('--rounds', type=int,  default=100, help='rounds')
+    parser.add_argument('--rounds', type=int,  default=30, help='rounds')
 
-    parser.add_argument('--s1', type=int,  default=10, help='stage 1 rounds')
+    parser.add_argument('--s1', type=int,  default=7, help='stage 1 rounds')
     parser.add_argument('--begin', type=int,  default=10, help='ramp up begin')
     parser.add_argument('--end', type=int,  default=49, help='ramp up end')
     parser.add_argument('--a', type=float,  default=0.8, help='a')
