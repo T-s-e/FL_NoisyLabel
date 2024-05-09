@@ -54,8 +54,8 @@ if __name__ == '__main__':
     y_staining = np.array(dataset_train.staining)
 
     # specify the noise rate for each staining
-    # staining_noise_rate = [0.4, 0.4, 0.3, 0.2, 0.1]
-    staining_noise_rate = [0.7, 0.7, 0.5, 0.3, 0.1]
+    staining_noise_rate = [0.4, 0.4, 0.3, 0.2, 0.1]
+    # staining_noise_rate = [0.7, 0.7, 0.5, 0.3, 0.1]
     logging.info(f"staining_noise_rate: {staining_noise_rate}")
 
     y_train_noisy, gamma_s, real_noise_level = add_attribute_noise(

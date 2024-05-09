@@ -4,8 +4,9 @@
 
 import copy
 import torch
-from torch import nn
-
+import logging
+import torch.nn.functional as F
+from torch.utils.data import DataLoader
 
 def FedAvg(w):
     w_avg = copy.deepcopy(w[0])
@@ -20,7 +21,7 @@ def test_img(net_g, datatest, args):
     # testing
     test_loss = 0
     correct = 0
-    data_loader = DataLoader(datatest, batch_size=args.bs)
+    data_loader = DataLoader(datatest, batch_size=args.batch_size)
     l = len(data_loader)
     for idx, (data, target) in enumerate(data_loader):
         if args.gpu != -1:
@@ -31,10 +32,11 @@ def test_img(net_g, datatest, args):
         # get the index of the max log-probability
         y_pred = log_probs.data.max(1, keepdim=True)[1]
         correct += y_pred.eq(target.data.view_as(y_pred)).long().cpu().sum()
+        # logging.info(f"test: {idx}/{l}, loss: {test_loss}, correct: {correct}")
 
     test_loss /= len(data_loader.dataset)
     accuracy = 100.00 * correct / len(data_loader.dataset)
-    if args.verbose:
-        print('\nTest set: Average loss: {:.4f} \nAccuracy: {}/{} ({:.2f}%)\n'.format(
-            test_loss, correct, len(data_loader.dataset), accuracy))
+
+    print('\nTest set: Average loss: {:.4f} \nAccuracy: {}/{} ({:.2f}%)\n'.format(
+        test_loss, correct, len(data_loader.dataset), accuracy))
     return accuracy, test_loss

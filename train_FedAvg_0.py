@@ -16,7 +16,7 @@ from torch.utils.data import DataLoader
 from utils.options import args_parser
 from utils.local_training import LocalUpdate_FedAvg, globaltest
 from utils.FedAvg import FedAvg, DaAgg
-from utils.utils import add_attribute_noise, set_seed, set_output_files, get_output, get_current_consistency_weight
+from utils.utils import add_noise, add_attribute_noise, set_seed, set_output_files, get_output, get_current_consistency_weight
 
 from dataset.dataset import get_dataset
 from model.build_model import build_model
@@ -83,7 +83,6 @@ if __name__ == '__main__':
     val_loss_pre, counter = 0, 0
     net_best = None
     best_loss = 1.0
-    best_performance = 0.0
     val_acc_list, net_list = [], []
 
     w_locals = [w_glob for _ in range(args.n_clients)]
@@ -114,20 +113,6 @@ if __name__ == '__main__':
         logging.info('Round {:3d}, Average loss {:.3f}, Best loss {:.3f}'.format(iter, loss_avg, best_loss))
         loss_train.append(loss_avg)
 
-        # acc
-        pred = globaltest(copy.deepcopy(net_glob).to(
-            args.device), dataset_test, args)
-        acc = accuracy_score(dataset_test.targets, pred)
-        bacc = balanced_accuracy_score(dataset_test.targets, pred)
-        cm = confusion_matrix(dataset_test.targets, pred)
-        logging.info(
-            "******** round: %d, acc: %.4f, bacc: %.4f ********" % (iter, acc, bacc))
-        logging.info(cm)
-        writer.add_scalar(f'test/acc', acc, iter)
-        writer.add_scalar(f'test/bacc', bacc, iter)
-        if bacc > best_performance:
-            best_performance = bacc
-        logging.info(f'best bacc: {best_performance}, now bacc: {bacc}')
 
     # Save the model
     torch.save(net_glob.state_dict(), models_dir + '/final_model.pth')
@@ -146,7 +131,7 @@ if __name__ == '__main__':
     plt.title('Camelyon17')
     plt.ylabel('loss')
     plt.xlabel('round')
-    plt.savefig(f'{models_dir}/loss_1.png')
+    plt.savefig(f'{models_dir}/loss_0.png')
     plt.close()
 
     # testing

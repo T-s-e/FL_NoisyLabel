@@ -34,3 +34,12 @@ class LA_KD(nn.Module):
 
         return w_kd * kl + (1 - w_kd) * F.nll_loss(log_pred, target)
 
+def js(p_output, q_output):
+    """
+    :param predict: model prediction for original data
+    :param target: model prediction for mildly augmented data
+    :return: loss
+    """
+    KLDivLoss = nn.KLDivLoss(reduction='mean')
+    log_mean_output = ((p_output + q_output) / 2).log()
+    return (KLDivLoss(log_mean_output, p_output) + KLDivLoss(log_mean_output, q_output)) / 2

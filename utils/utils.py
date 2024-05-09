@@ -12,8 +12,10 @@ import torch
 import torch.nn.functional as F
 
 from sklearn.metrics import balanced_accuracy_score
+from scipy.spatial.distance import cdist
 
 from dataset.dataset import DATA_DIR
+
 
 def add_noise(args, y_train, dict_users):
     np.random.seed(args.seed)
@@ -259,3 +261,20 @@ def set_output_files(root_path, args):
     writer = SummaryWriter(tensorboard_dir)
     return writer, models_dir
 
+def lid_term(X, batch, k=20):
+    eps = 1e-6
+    X = np.asarray(X, dtype=np.float32)
+
+    batch = np.asarray(batch, dtype=np.float32)
+    f = lambda v: - k / (np.sum(np.log(v / (v[-1]+eps)))+eps)
+    distances = cdist(X, batch)
+
+    # get the closest k neighbours
+    sort_indices = np.apply_along_axis(np.argsort, axis=1, arr=distances)[:, 1:k + 1]
+    m, n = sort_indices.shape
+    idx = np.ogrid[:m, :n]
+    idx[1] = sort_indices
+    # sorted matrix
+    distances_ = distances[tuple(idx)]
+    lids = np.apply_along_axis(f, axis=1, arr=distances_)
+    return lids

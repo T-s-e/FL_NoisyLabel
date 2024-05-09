@@ -8608,3 +8608,1715 @@
 [11:51:59.441] 0.9770200000000001
 [11:51:59.441] best:
 [11:51:59.441] 0.9783999999999999
+[11:58:14.346] Namespace(deterministic=1, seed=0, gpu='1', exp='Atr', dataset='Camelyon17', model='Resnet18', batch_size=16, base_lr=0.0003, pretrained=0, momentum=0.5, n_clients=20, iid=0, non_iid_prob_class=0.9, alpha_dirichlet=2.0, local_ep=5, rounds=40, iteration1=5, rounds1=10, rounds2=25, frac2=0.2, relabel_ratio=0.5, confidence_thres=0.5, clean_set_thres=0.1, beta=0, fine_tuning=True, correction=True, mixup=False, prox=0.01, s1=5, begin=10, end=49, a=0.8, warm=1, level_n_system=0.5, level_n_lowerb=0.5, level_n_upperb=0.7, n_type='instance', num_users=20, device='cuda')
+[11:58:14.500] train: Counter({0: 25000, 1: 25000}), total: 50000
+[11:58:14.501] test: Counter({0: 5000, 1: 5000}), total: 10000
+[11:58:14.501] staining_noise_rate: [0.4, 0.4, 0.3, 0.2, 0.1]
+[11:58:14.502] Client 1, Real noise ratio: 0.2562
+[11:58:14.503] Client 3, Real noise ratio: 0.2583
+[11:58:14.503] Client 6, Real noise ratio: 0.2785
+[11:58:14.504] Client 8, Real noise ratio: 0.2913
+[11:58:14.505] Client 9, Real noise ratio: 0.2787
+[11:58:14.505] Client 10, Real noise ratio: 0.2981
+[11:58:14.506] Client 12, Real noise ratio: 0.2518
+[11:58:14.507] Client 13, Real noise ratio: 0.2015
+[11:58:14.507] Client 16, Real noise ratio: 0.3513
+[11:58:14.508] Client 17, Real noise ratio: 0.2452
+[11:58:14.508] Average real noise ratio across all clients: 0.1356
+[11:58:18.480] client0 each class num: [1208, 1166], total: 2374
+[11:58:18.497] client1 each class num: [1312, 1369], total: 2681
+[11:58:18.513] client2 each class num: [1635, 1694], total: 3329
+[11:58:18.529] client3 each class num: [873, 908], total: 1781
+[11:58:18.546] client4 each class num: [1235, 1279], total: 2514
+[11:58:18.563] client5 each class num: [1665, 1714], total: 3379
+[11:58:18.580] client6 each class num: [1162, 1190], total: 2352
+[11:58:18.597] client7 each class num: [1465, 1439], total: 2904
+[11:58:18.614] client8 each class num: [958, 1040], total: 1998
+[11:58:18.631] client9 each class num: [826, 803], total: 1629
+[11:58:18.648] client10 each class num: [892, 829], total: 1721
+[11:58:18.665] client11 each class num: [1825, 1835], total: 3660
+[11:58:18.682] client12 each class num: [766, 727], total: 1493
+[11:58:18.699] client13 each class num: [1575, 1541], total: 3116
+[11:58:18.716] client14 each class num: [600, 592], total: 1192
+[11:58:18.733] client15 each class num: [1874, 1879], total: 3753
+[11:58:18.750] client16 each class num: [916, 954], total: 1870
+[11:58:18.768] client17 each class num: [1886, 1772], total: 3658
+[11:58:18.785] client18 each class num: [1143, 1110], total: 2253
+[11:58:18.802] client19 each class num: [1141, 1202], total: 2343
+[11:58:18.803] 
+ ---------------------begin training---------------------
+[11:58:18.803] 
+ ---------------------Stage 1: warm up---------------------
+[12:10:12.383] ******** round: 0, acc: 0.5000, bacc: 0.5000 ********
+[12:10:12.383] [[5000    0]
+ [5000    0]]
+[12:10:12.384] best bacc: 0.5, now bacc: 0.5
+[12:10:12.384] 
+
+[12:22:17.305] ******** round: 1, acc: 0.5000, bacc: 0.5000 ********
+[12:22:17.306] [[5000    0]
+ [5000    0]]
+[12:22:17.306] best bacc: 0.5, now bacc: 0.5
+[12:22:17.307] 
+
+[12:34:30.396] ******** round: 2, acc: 0.6776, bacc: 0.6776 ********
+[12:34:30.396] [[4990   10]
+ [3214 1786]]
+[12:34:30.397] best bacc: 0.6776, now bacc: 0.6776
+[12:34:30.397] 
+
+[12:46:45.117] ******** round: 3, acc: 0.8664, bacc: 0.8664 ********
+[12:46:45.118] [[4954   46]
+ [1290 3710]]
+[12:46:45.118] best bacc: 0.8664000000000001, now bacc: 0.8664000000000001
+[12:46:45.119] 
+
+[12:58:56.156] ******** round: 4, acc: 0.8660, bacc: 0.8660 ********
+[12:58:56.156] [[4981   19]
+ [1321 3679]]
+[12:58:56.158] best bacc: 0.8664000000000001, now bacc: 0.866
+[12:58:56.158] 
+
+[12:58:56.261] 
+ ---------------------client selection---------------------
+[12:58:56.261] ********************** load model from: /home/xkx/pro/FedNoRo/outputs_Camelyon17_0.5_0.5_0.7/Atr_0.5_0.5_0.7_5/models/stage1_model_4.pth **********************
+[13:01:00.828] local_output: (50000, 2), loss: (50000,)
+[13:01:00.876] metrics:
+[13:01:00.876] [[0.05076331 0.05210699]
+ [0.723503   0.68587004]
+ [0.05609274 0.050636  ]
+ [0.80478833 0.70419032]
+ [0.03431989 0.03785761]
+ [0.11215191 0.07373548]
+ [0.82837159 0.83897171]
+ [0.03894219 0.07748615]
+ [0.79274227 0.87488402]
+ [0.76409039 0.8235221 ]
+ [0.80752535 0.9052535 ]
+ [0.08432261 0.06420679]
+ [0.75457207 0.60858222]
+ [0.63871225 0.4998424 ]
+ [0.08487774 0.11477811]
+ [0.         0.        ]
+ [1.         1.        ]
+ [0.71912212 0.75095248]
+ [0.07281146 0.09203994]
+ [0.08700622 0.05043372]]
+[13:01:00.903] selected noisy clients: [1, 3, 6, 8, 9, 10, 12, 13, 16, 17], real noisy clients: [ 1  3  6  8  9 10 12 13 16 17]
+[13:01:00.903] selected clean clients: [0, 2, 4, 5, 7, 11, 14, 15, 18, 19]
+[13:01:00.903] 
+ ---------------------Stage 2---------------------
+[13:01:00.909] clean clients
+[13:01:35.614] Round 5: client 0 loss: 0.19955519858322684
+[13:01:35.614] noisy clients
+[13:02:20.867] Round 5: client 1 loss: 0.5994070895370983
+[13:02:20.868] clean clients
+[13:03:07.976] Round 5: client 2 loss: 0.19508213384174986
+[13:03:07.976] noisy clients
+[13:03:39.738] Round 5: client 3 loss: 0.6016657399811915
+[13:03:39.738] clean clients
+[13:04:16.158] Round 5: client 4 loss: 0.19168175709304175
+[13:04:16.159] clean clients
+[13:05:03.583] Round 5: client 5 loss: 0.22415067132492114
+[13:05:03.583] noisy clients
+[13:05:42.992] Round 5: client 6 loss: 0.6232368429907325
+[13:05:42.993] clean clients
+[13:06:24.594] Round 5: client 7 loss: 0.1858436785029391
+[13:06:24.594] noisy clients
+[13:06:59.231] Round 5: client 8 loss: 0.6283706336021424
+[13:06:59.231] noisy clients
+[13:07:27.629] Round 5: client 9 loss: 0.6200710179174648
+[13:07:27.629] noisy clients
+[13:07:57.859] Round 5: client 10 loss: 0.6289017589003951
+[13:07:57.860] clean clients
+[13:08:48.325] Round 5: client 11 loss: 0.2166709513415676
+[13:08:48.325] noisy clients
+[13:09:14.462] Round 5: client 12 loss: 0.5931546849773285
+[13:09:14.462] noisy clients
+[13:10:05.266] Round 5: client 13 loss: 0.5502607246087148
+[13:10:05.266] clean clients
+[13:10:24.512] Round 5: client 14 loss: 0.22238837531208994
+[13:10:24.512] clean clients
+[13:11:17.451] Round 5: client 15 loss: 0.16393897908006577
+[13:11:17.451] noisy clients
+[13:11:49.191] Round 5: client 16 loss: 0.6668140031843104
+[13:11:49.192] noisy clients
+[13:12:49.044] Round 5: client 17 loss: 0.5897384987647877
+[13:12:49.044] clean clients
+[13:13:21.664] Round 5: client 18 loss: 0.2146237105580298
+[13:13:21.665] clean clients
+[13:13:55.057] Round 5: client 19 loss: 0.21762490224625383
+[13:14:06.238] ******** round: 5, acc: 0.9061, bacc: 0.9061 ********
+[13:14:06.238] [[4966   34]
+ [ 905 4095]]
+[13:14:06.239] best bacc: 0.9060999999999999, now bacc: 0.9060999999999999
+[13:14:06.239] 
+
+[13:14:06.246] clean clients
+[13:14:40.579] Round 6: client 0 loss: 0.1926847599209255
+[13:14:40.579] noisy clients
+[13:15:25.943] Round 6: client 1 loss: 0.5908203749074823
+[13:15:25.943] clean clients
+[13:16:12.362] Round 6: client 2 loss: 0.17882610250567418
+[13:16:12.362] noisy clients
+[13:16:43.768] Round 6: client 3 loss: 0.6007651958614588
+[13:16:43.768] clean clients
+[13:17:20.183] Round 6: client 4 loss: 0.17444411517250574
+[13:17:20.184] clean clients
+[13:18:07.791] Round 6: client 5 loss: 0.21140553389834066
+[13:18:07.791] noisy clients
+[13:18:47.198] Round 6: client 6 loss: 0.6231849347653032
+[13:18:47.198] clean clients
+[13:19:28.139] Round 6: client 7 loss: 0.1699857901341722
+[13:19:28.139] noisy clients
+[13:20:02.175] Round 6: client 8 loss: 0.6311134298801422
+[13:20:02.175] noisy clients
+[13:20:31.305] Round 6: client 9 loss: 0.6209061038844725
+[13:20:31.306] noisy clients
+[13:21:01.644] Round 6: client 10 loss: 0.6274452026243563
+[13:21:01.645] clean clients
+[13:21:51.679] Round 6: client 11 loss: 0.19595242187901354
+[13:21:51.679] noisy clients
+[13:22:18.296] Round 6: client 12 loss: 0.5944485512185603
+[13:22:18.296] noisy clients
+[13:23:09.864] Round 6: client 13 loss: 0.5480855300640448
+[13:23:09.864] clean clients
+[13:23:29.084] Round 6: client 14 loss: 0.20719498740136624
+[13:23:29.084] clean clients
+[13:24:21.357] Round 6: client 15 loss: 0.15791237650637296
+[13:24:21.357] noisy clients
+[13:24:53.242] Round 6: client 16 loss: 0.6701502511134515
+[13:24:53.242] noisy clients
+[13:25:53.243] Round 6: client 17 loss: 0.5854653691881089
+[13:25:53.243] clean clients
+[13:26:26.256] Round 6: client 18 loss: 0.2039768124778643
+[13:26:26.256] clean clients
+[13:27:00.746] Round 6: client 19 loss: 0.2009308621084609
+[13:27:11.753] ******** round: 6, acc: 0.9397, bacc: 0.9397 ********
+[13:27:11.753] [[4925   75]
+ [ 528 4472]]
+[13:27:11.754] best bacc: 0.9397, now bacc: 0.9397
+[13:27:11.754] 
+
+[13:27:11.763] clean clients
+[13:27:46.486] Round 7: client 0 loss: 0.1841823463921979
+[13:27:46.487] noisy clients
+[13:28:31.318] Round 7: client 1 loss: 0.5921083742486579
+[13:28:31.318] clean clients
+[13:29:18.596] Round 7: client 2 loss: 0.1698406464718817
+[13:29:18.596] noisy clients
+[13:29:49.448] Round 7: client 3 loss: 0.6019718802400997
+[13:29:49.449] clean clients
+[13:30:25.708] Round 7: client 4 loss: 0.16282672676246
+[13:30:25.709] clean clients
+[13:31:13.267] Round 7: client 5 loss: 0.20286046584962675
+[13:31:13.267] noisy clients
+[13:31:52.710] Round 7: client 6 loss: 0.6185409176917303
+[13:31:52.710] clean clients
+[13:32:34.235] Round 7: client 7 loss: 0.15768910759527768
+[13:32:34.236] noisy clients
+[13:33:07.949] Round 7: client 8 loss: 0.6294069136142731
+[13:33:07.949] noisy clients
+[13:33:36.513] Round 7: client 9 loss: 0.6211780000551074
+[13:33:36.513] noisy clients
+[13:34:06.614] Round 7: client 10 loss: 0.6317442656115249
+[13:34:06.614] clean clients
+[13:34:57.863] Round 7: client 11 loss: 0.18530878033692333
+[13:34:57.863] noisy clients
+[13:35:24.078] Round 7: client 12 loss: 0.5946217157105183
+[13:35:24.078] noisy clients
+[13:36:15.501] Round 7: client 13 loss: 0.5427081635517952
+[13:36:15.502] clean clients
+[13:36:34.478] Round 7: client 14 loss: 0.18730369533101715
+[13:36:34.478] clean clients
+[13:37:27.280] Round 7: client 15 loss: 0.1500525835917351
+[13:37:27.281] noisy clients
+[13:37:59.566] Round 7: client 16 loss: 0.662537394527696
+[13:37:59.566] noisy clients
+[13:38:59.507] Round 7: client 17 loss: 0.5892274592380856
+[13:38:59.507] clean clients
+[13:39:32.468] Round 7: client 18 loss: 0.18620331995585496
+[13:39:32.468] clean clients
+[13:40:06.163] Round 7: client 19 loss: 0.18084751640883637
+[13:40:17.559] ******** round: 7, acc: 0.9399, bacc: 0.9399 ********
+[13:40:17.559] [[4943   57]
+ [ 544 4456]]
+[13:40:17.560] best bacc: 0.9399, now bacc: 0.9399
+[13:40:17.560] 
+
+[13:40:17.568] clean clients
+[13:40:50.954] Round 8: client 0 loss: 0.16279254524449774
+[13:40:50.954] noisy clients
+[13:41:34.995] Round 8: client 1 loss: 0.5850821144169285
+[13:41:34.995] clean clients
+[13:42:21.377] Round 8: client 2 loss: 0.1699394770848908
+[13:42:21.377] noisy clients
+[13:42:51.177] Round 8: client 3 loss: 0.5963367905999933
+[13:42:51.177] clean clients
+[13:43:27.663] Round 8: client 4 loss: 0.15781675893459704
+[13:43:27.664] clean clients
+[13:44:15.527] Round 8: client 5 loss: 0.19355565081614085
+[13:44:15.527] noisy clients
+[13:44:53.730] Round 8: client 6 loss: 0.6181501917287606
+[13:44:53.730] clean clients
+[13:45:34.973] Round 8: client 7 loss: 0.14948951492372614
+[13:45:34.973] noisy clients
+[13:46:07.922] Round 8: client 8 loss: 0.6258545074939728
+[13:46:07.922] noisy clients
+[13:46:36.817] Round 8: client 9 loss: 0.6213036597943773
+[13:46:36.817] noisy clients
+[13:47:06.630] Round 8: client 10 loss: 0.6218032469352086
+[13:47:06.630] clean clients
+[13:47:58.189] Round 8: client 11 loss: 0.1709747602923175
+[13:47:58.190] noisy clients
+[13:48:24.127] Round 8: client 12 loss: 0.5878299972161335
+[13:48:24.127] noisy clients
+[13:49:15.818] Round 8: client 13 loss: 0.5434745273376123
+[13:49:15.818] clean clients
+[13:49:35.202] Round 8: client 14 loss: 0.1701082211881876
+[13:49:35.203] clean clients
+[13:50:28.000] Round 8: client 15 loss: 0.14611278466404753
+[13:50:28.000] noisy clients
+[13:51:00.721] Round 8: client 16 loss: 0.6638256698082656
+[13:51:00.721] noisy clients
+[13:52:00.559] Round 8: client 17 loss: 0.5842447381873318
+[13:52:00.559] clean clients
+[13:52:34.090] Round 8: client 18 loss: 0.17490332199009598
+[13:52:34.090] clean clients
+[13:53:07.482] Round 8: client 19 loss: 0.17300565140385205
+[13:53:18.845] ******** round: 8, acc: 0.9544, bacc: 0.9544 ********
+[13:53:18.846] [[4878  122]
+ [ 334 4666]]
+[13:53:18.847] best bacc: 0.9544, now bacc: 0.9544
+[13:53:18.847] 
+
+[13:53:18.852] clean clients
+[13:53:52.472] Round 9: client 0 loss: 0.15958886394814759
+[13:53:52.472] noisy clients
+[13:54:36.393] Round 9: client 1 loss: 0.5848403660314423
+[13:54:36.393] clean clients
+[13:55:23.082] Round 9: client 2 loss: 0.15383942281809504
+[13:55:23.082] noisy clients
+[13:55:52.590] Round 9: client 3 loss: 0.5945899607347591
+[13:55:52.590] clean clients
+[13:56:28.513] Round 9: client 4 loss: 0.1499579133937442
+[13:56:28.513] clean clients
+[13:57:16.007] Round 9: client 5 loss: 0.17402647335679747
+[13:57:16.008] noisy clients
+[13:57:54.873] Round 9: client 6 loss: 0.6178283064949268
+[13:57:54.873] clean clients
+[13:58:35.880] Round 9: client 7 loss: 0.14554338406894232
+[13:58:35.881] noisy clients
+[13:59:09.239] Round 9: client 8 loss: 0.6242580235481261
+[13:59:09.239] noisy clients
+[13:59:37.173] Round 9: client 9 loss: 0.6217043270083036
+[13:59:37.173] noisy clients
+[14:00:07.783] Round 9: client 10 loss: 0.6233240441039757
+[14:00:07.783] clean clients
+[14:00:59.302] Round 9: client 11 loss: 0.16371880327046373
+[14:00:59.302] noisy clients
+[14:01:25.507] Round 9: client 12 loss: 0.5858512985262465
+[14:01:25.507] noisy clients
+[14:02:16.142] Round 9: client 13 loss: 0.5428221574654947
+[14:02:16.143] clean clients
+[14:02:35.431] Round 9: client 14 loss: 0.1631113061631719
+[14:02:35.431] clean clients
+[14:03:27.078] Round 9: client 15 loss: 0.13180140591325595
+[14:03:27.079] noisy clients
+[14:03:59.462] Round 9: client 16 loss: 0.6605990503588293
+[14:03:59.462] noisy clients
+[14:04:59.274] Round 9: client 17 loss: 0.5823894470799958
+[14:04:59.274] clean clients
+[14:05:32.132] Round 9: client 18 loss: 0.1610233021213125
+[14:05:32.133] clean clients
+[14:06:06.434] Round 9: client 19 loss: 0.17125362610685174
+[14:06:18.129] ******** round: 9, acc: 0.9549, bacc: 0.9549 ********
+[14:06:18.129] [[4890  110]
+ [ 341 4659]]
+[14:06:18.130] best bacc: 0.9549, now bacc: 0.9549
+[14:06:18.130] 
+
+[14:06:18.137] clean clients
+[14:06:52.190] Round 10: client 0 loss: 0.15396399017073364
+[14:06:52.191] noisy clients
+[14:07:34.912] Round 10: client 1 loss: 0.5873773118569738
+[14:07:34.913] clean clients
+[14:08:21.440] Round 10: client 2 loss: 0.14684927117115146
+[14:08:21.440] noisy clients
+[14:08:52.442] Round 10: client 3 loss: 0.5936265304152454
+[14:08:52.442] clean clients
+[14:09:28.853] Round 10: client 4 loss: 0.1373189104001828
+[14:09:28.853] clean clients
+[14:10:17.871] Round 10: client 5 loss: 0.17139716687401368
+[14:10:17.871] noisy clients
+[14:10:58.510] Round 10: client 6 loss: 0.6187486423116152
+[14:10:58.510] clean clients
+[14:11:39.673] Round 10: client 7 loss: 0.13675323366545714
+[14:11:39.673] noisy clients
+[14:12:13.768] Round 10: client 8 loss: 0.6250800353527068
+[14:12:13.768] noisy clients
+[14:12:41.877] Round 10: client 9 loss: 0.6166985159995508
+[14:12:41.877] noisy clients
+[14:13:12.148] Round 10: client 10 loss: 0.6248035819442185
+[14:13:12.148] clean clients
+[14:14:03.054] Round 10: client 11 loss: 0.15595926752712527
+[14:14:03.055] noisy clients
+[14:14:30.082] Round 10: client 12 loss: 0.5881443681235009
+[14:14:30.082] noisy clients
+[14:15:19.953] Round 10: client 13 loss: 0.5390583543441234
+[14:15:19.954] clean clients
+[14:15:38.950] Round 10: client 14 loss: 0.16147568448881308
+[14:15:38.951] clean clients
+[14:16:30.983] Round 10: client 15 loss: 0.12925053000291611
+[14:16:30.983] noisy clients
+[14:17:02.870] Round 10: client 16 loss: 0.6609343040702689
+[14:17:02.870] noisy clients
+[14:18:02.381] Round 10: client 17 loss: 0.5815248931339214
+[14:18:02.381] clean clients
+[14:18:34.499] Round 10: client 18 loss: 0.16680732027673764
+[14:18:34.499] clean clients
+[14:19:09.025] Round 10: client 19 loss: 0.1482239690222809
+[14:19:20.337] ******** round: 10, acc: 0.9600, bacc: 0.9600 ********
+[14:19:20.338] [[4888  112]
+ [ 288 4712]]
+[14:19:20.338] best bacc: 0.96, now bacc: 0.96
+[14:19:20.338] 
+
+[14:19:20.344] clean clients
+[14:19:54.253] Round 11: client 0 loss: 0.1440121574986776
+[14:19:54.253] noisy clients
+[14:20:38.003] Round 11: client 1 loss: 0.5827338028166975
+[14:20:38.003] clean clients
+[14:21:24.566] Round 11: client 2 loss: 0.13484868218801452
+[14:21:24.566] noisy clients
+[14:21:55.471] Round 11: client 3 loss: 0.5903965481157815
+[14:21:55.472] clean clients
+[14:22:31.517] Round 11: client 4 loss: 0.1258776756940716
+[14:22:31.518] clean clients
+[14:23:18.905] Round 11: client 5 loss: 0.16856018689610416
+[14:23:18.905] noisy clients
+[14:23:58.421] Round 11: client 6 loss: 0.6193977217285
+[14:23:58.421] clean clients
+[14:24:39.123] Round 11: client 7 loss: 0.12903712728204061
+[14:24:39.123] noisy clients
+[14:25:12.891] Round 11: client 8 loss: 0.62045034866333
+[14:25:12.892] noisy clients
+[14:25:41.258] Round 11: client 9 loss: 0.6186320312467275
+[14:25:41.258] noisy clients
+[14:26:10.397] Round 11: client 10 loss: 0.6242304054123384
+[14:26:10.398] clean clients
+[14:27:01.674] Round 11: client 11 loss: 0.15350737325708874
+[14:27:01.674] noisy clients
+[14:27:28.014] Round 11: client 12 loss: 0.5900218520392764
+[14:27:28.015] noisy clients
+[14:28:18.715] Round 11: client 13 loss: 0.5384141622598355
+[14:28:18.715] clean clients
+[14:28:37.690] Round 11: client 14 loss: 0.1511947219570478
+[14:28:37.690] clean clients
+[14:29:30.104] Round 11: client 15 loss: 0.119947417208806
+[14:29:30.104] noisy clients
+[14:30:01.834] Round 11: client 16 loss: 0.660803099320485
+[14:30:01.834] noisy clients
+[14:31:01.162] Round 11: client 17 loss: 0.5789957798464329
+[14:31:01.162] clean clients
+[14:31:34.093] Round 11: client 18 loss: 0.1491774668705696
+[14:31:34.093] clean clients
+[14:32:08.599] Round 11: client 19 loss: 0.14743474232615764
+[14:32:20.956] ******** round: 11, acc: 0.9595, bacc: 0.9595 ********
+[14:32:20.956] [[4888  112]
+ [ 293 4707]]
+[14:32:20.957] best bacc: 0.96, now bacc: 0.9595
+[14:32:20.958] 
+
+[14:32:20.963] clean clients
+[14:32:55.512] Round 12: client 0 loss: 0.13774085664784147
+[14:32:55.512] noisy clients
+[14:33:38.726] Round 12: client 1 loss: 0.5840865934533731
+[14:33:38.726] clean clients
+[14:34:25.148] Round 12: client 2 loss: 0.13092936225877136
+[14:34:25.148] noisy clients
+[14:34:55.369] Round 12: client 3 loss: 0.5876591008688722
+[14:34:55.369] clean clients
+[14:35:31.466] Round 12: client 4 loss: 0.12675000737609837
+[14:35:31.467] clean clients
+[14:36:18.183] Round 12: client 5 loss: 0.164622978483028
+[14:36:18.184] noisy clients
+[14:36:57.921] Round 12: client 6 loss: 0.614255720863537
+[14:36:57.921] clean clients
+[14:37:38.714] Round 12: client 7 loss: 0.12357516833018142
+[14:37:38.714] noisy clients
+[14:38:11.797] Round 12: client 8 loss: 0.6231596124649048
+[14:38:11.797] noisy clients
+[14:38:40.130] Round 12: client 9 loss: 0.6146216072580393
+[14:38:40.130] noisy clients
+[14:39:09.371] Round 12: client 10 loss: 0.6207213692091129
+[14:39:09.372] clean clients
+[14:40:00.040] Round 12: client 11 loss: 0.14445712869523264
+[14:40:00.041] noisy clients
+[14:40:26.473] Round 12: client 12 loss: 0.5856123967373625
+[14:40:26.473] noisy clients
+[14:41:17.160] Round 12: client 13 loss: 0.5403325272217775
+[14:41:17.160] clean clients
+[14:41:36.094] Round 12: client 14 loss: 0.14340680309322973
+[14:41:36.095] clean clients
+[14:42:28.420] Round 12: client 15 loss: 0.11809316145553392
+[14:42:28.420] noisy clients
+[14:43:00.630] Round 12: client 16 loss: 0.6616069214466291
+[14:43:00.630] noisy clients
+[14:43:59.329] Round 12: client 17 loss: 0.5805691344508958
+[14:43:59.330] clean clients
+[14:44:32.621] Round 12: client 18 loss: 0.14385292343531095
+[14:44:32.622] clean clients
+[14:45:07.059] Round 12: client 19 loss: 0.13730202706556033
+[14:45:18.739] ******** round: 12, acc: 0.9618, bacc: 0.9618 ********
+[14:45:18.739] [[4882  118]
+ [ 264 4736]]
+[14:45:18.740] best bacc: 0.9618, now bacc: 0.9618
+[14:45:18.740] 
+
+[14:45:18.746] clean clients
+[14:45:54.129] Round 13: client 0 loss: 0.1342986418671856
+[14:45:54.130] noisy clients
+[14:46:38.237] Round 13: client 1 loss: 0.5809810371271201
+[14:46:38.238] clean clients
+[14:47:24.527] Round 13: client 2 loss: 0.13511477256367546
+[14:47:24.527] noisy clients
+[14:47:54.313] Round 13: client 3 loss: 0.5875202606565185
+[14:47:54.314] clean clients
+[14:48:31.024] Round 13: client 4 loss: 0.12458946346600035
+[14:48:31.024] clean clients
+[14:49:17.608] Round 13: client 5 loss: 0.1523179140943542
+[14:49:17.609] noisy clients
+[14:49:56.508] Round 13: client 6 loss: 0.6146217132912202
+[14:49:56.508] clean clients
+[14:50:38.415] Round 13: client 7 loss: 0.1207415458991878
+[14:50:38.416] noisy clients
+[14:51:12.162] Round 13: client 8 loss: 0.6187948177337648
+[14:51:12.162] noisy clients
+[14:51:40.150] Round 13: client 9 loss: 0.6076359302974214
+[14:51:40.150] noisy clients
+[14:52:10.360] Round 13: client 10 loss: 0.6191133814277472
+[14:52:10.360] clean clients
+[14:53:00.745] Round 13: client 11 loss: 0.14362708370091484
+[14:53:00.746] noisy clients
+[14:53:26.971] Round 13: client 12 loss: 0.5919855787557491
+[14:53:26.971] noisy clients
+[14:54:18.322] Round 13: client 13 loss: 0.5346126344265082
+[14:54:18.323] clean clients
+[14:54:37.655] Round 13: client 14 loss: 0.14385848176851868
+[14:54:37.655] clean clients
+[14:55:29.710] Round 13: client 15 loss: 0.1124142446389739
+[14:55:29.711] noisy clients
+[14:56:01.500] Round 13: client 16 loss: 0.6634981168640984
+[14:56:01.500] noisy clients
+[14:57:00.637] Round 13: client 17 loss: 0.5769821227247538
+[14:57:00.637] clean clients
+[14:57:33.528] Round 13: client 18 loss: 0.13201694913234904
+[14:57:33.528] clean clients
+[14:58:08.094] Round 13: client 19 loss: 0.1369058650785259
+[14:58:19.818] ******** round: 13, acc: 0.9628, bacc: 0.9628 ********
+[14:58:19.818] [[4884  116]
+ [ 256 4744]]
+[14:58:19.819] best bacc: 0.9628, now bacc: 0.9628
+[14:58:19.819] 
+
+[14:58:19.824] clean clients
+[14:58:54.386] Round 14: client 0 loss: 0.12974837699142477
+[14:58:54.386] noisy clients
+[14:59:38.747] Round 14: client 1 loss: 0.5800482426991775
+[14:59:38.747] clean clients
+[15:00:25.394] Round 14: client 2 loss: 0.13262858925850696
+[15:00:25.394] noisy clients
+[15:00:55.647] Round 14: client 3 loss: 0.5887107867747545
+[15:00:55.647] clean clients
+[15:01:32.058] Round 14: client 4 loss: 0.1292269914973928
+[15:01:32.058] clean clients
+[15:02:19.872] Round 14: client 5 loss: 0.15221147337348534
+[15:02:19.872] noisy clients
+[15:02:58.720] Round 14: client 6 loss: 0.610752300543039
+[15:02:58.720] clean clients
+[15:03:40.482] Round 14: client 7 loss: 0.11648078071808055
+[15:03:40.482] noisy clients
+[15:04:14.469] Round 14: client 8 loss: 0.6189279489040376
+[15:04:14.470] noisy clients
+[15:04:42.340] Round 14: client 9 loss: 0.6153834626955145
+[15:04:42.340] noisy clients
+[15:05:11.819] Round 14: client 10 loss: 0.6181264922574714
+[15:05:11.820] clean clients
+[15:06:02.217] Round 14: client 11 loss: 0.13707383875511425
+[15:06:02.217] noisy clients
+[15:06:28.522] Round 14: client 12 loss: 0.5821687751627983
+[15:06:28.523] noisy clients
+[15:07:20.589] Round 14: client 13 loss: 0.5347952371950333
+[15:07:20.589] clean clients
+[15:07:39.520] Round 14: client 14 loss: 0.12914801260518532
+[15:07:39.521] clean clients
+[15:08:31.445] Round 14: client 15 loss: 0.11120492508278246
+[15:08:31.445] noisy clients
+[15:09:03.967] Round 14: client 16 loss: 0.6607464413357597
+[15:09:03.967] noisy clients
+[15:10:02.970] Round 14: client 17 loss: 0.5762545115822788
+[15:10:02.970] clean clients
+[15:10:35.718] Round 14: client 18 loss: 0.13316333566442234
+[15:10:35.718] clean clients
+[15:11:10.167] Round 14: client 19 loss: 0.12621445807115156
+[15:11:22.183] ******** round: 14, acc: 0.9635, bacc: 0.9635 ********
+[15:11:22.184] [[4854  146]
+ [ 219 4781]]
+[15:11:22.185] best bacc: 0.9635, now bacc: 0.9635
+[15:11:22.186] 
+
+[15:11:22.192] clean clients
+[15:11:56.446] Round 15: client 0 loss: 0.13137326209287117
+[15:11:56.446] noisy clients
+[15:12:41.314] Round 15: client 1 loss: 0.5785244216166792
+[15:12:41.314] clean clients
+[15:13:28.338] Round 15: client 2 loss: 0.1158972035924142
+[15:13:28.338] noisy clients
+[15:13:58.658] Round 15: client 3 loss: 0.5837965256933655
+[15:13:58.658] clean clients
+[15:14:35.015] Round 15: client 4 loss: 0.11459946420745146
+[15:14:35.016] clean clients
+[15:15:22.571] Round 15: client 5 loss: 0.15107926092866175
+[15:15:22.571] noisy clients
+[15:16:01.131] Round 15: client 6 loss: 0.6158858853943494
+[15:16:01.131] clean clients
+[15:16:42.881] Round 15: client 7 loss: 0.10974937604694208
+[15:16:42.881] noisy clients
+[15:17:17.009] Round 15: client 8 loss: 0.615354987335205
+[15:17:17.009] noisy clients
+[15:17:44.837] Round 15: client 9 loss: 0.6117939405581531
+[15:17:44.837] noisy clients
+[15:18:14.900] Round 15: client 10 loss: 0.6181404963135719
+[15:18:14.900] clean clients
+[15:19:06.949] Round 15: client 11 loss: 0.13189380181603558
+[15:19:06.950] noisy clients
+[15:19:33.434] Round 15: client 12 loss: 0.5820200709586447
+[15:19:33.435] noisy clients
+[15:20:24.858] Round 15: client 13 loss: 0.5290187766460271
+[15:20:24.858] clean clients
+[15:20:44.223] Round 15: client 14 loss: 0.13163939795022211
+[15:20:44.223] clean clients
+[15:21:36.365] Round 15: client 15 loss: 0.10836808131304272
+[15:21:36.365] noisy clients
+[15:22:08.206] Round 15: client 16 loss: 0.6597182461339185
+[15:22:08.207] noisy clients
+[15:23:08.112] Round 15: client 17 loss: 0.5722112438303935
+[15:23:08.112] clean clients
+[15:23:40.924] Round 15: client 18 loss: 0.1256250316415854
+[15:23:40.924] clean clients
+[15:24:15.349] Round 15: client 19 loss: 0.13149833353553092
+[15:24:27.557] ******** round: 15, acc: 0.9652, bacc: 0.9652 ********
+[15:24:27.557] [[4882  118]
+ [ 230 4770]]
+[15:24:27.558] best bacc: 0.9652000000000001, now bacc: 0.9652000000000001
+[15:24:27.558] 
+
+[15:24:27.565] clean clients
+[15:25:02.143] Round 16: client 0 loss: 0.12148557907820448
+[15:25:02.143] noisy clients
+[15:25:46.516] Round 16: client 1 loss: 0.5795327847912198
+[15:25:46.516] clean clients
+[15:26:32.855] Round 16: client 2 loss: 0.12409727060677189
+[15:26:32.856] noisy clients
+[15:27:02.512] Round 16: client 3 loss: 0.5800386120166097
+[15:27:02.512] clean clients
+[15:27:38.437] Round 16: client 4 loss: 0.11871675778758015
+[15:27:38.437] clean clients
+[15:28:25.798] Round 16: client 5 loss: 0.14297781014279026
+[15:28:25.798] noisy clients
+[15:29:04.393] Round 16: client 6 loss: 0.6100921973484714
+[15:29:04.394] clean clients
+[15:29:46.223] Round 16: client 7 loss: 0.11110333840971669
+[15:29:46.224] noisy clients
+[15:30:20.906] Round 16: client 8 loss: 0.616206099653244
+[15:30:20.906] noisy clients
+[15:30:48.203] Round 16: client 9 loss: 0.6159727350169538
+[15:30:48.203] noisy clients
+[15:31:17.801] Round 16: client 10 loss: 0.6150971122913891
+[15:31:17.801] clean clients
+[15:32:09.377] Round 16: client 11 loss: 0.12707253710476593
+[15:32:09.377] noisy clients
+[15:32:35.546] Round 16: client 12 loss: 0.5843365231727031
+[15:32:35.546] noisy clients
+[15:33:27.195] Round 16: client 13 loss: 0.5267370148499808
+[15:33:27.195] clean clients
+[15:33:46.982] Round 16: client 14 loss: 0.12731840993463991
+[15:33:46.983] clean clients
+[15:34:39.342] Round 16: client 15 loss: 0.10224343614979707
+[15:34:39.343] noisy clients
+[15:35:11.218] Round 16: client 16 loss: 0.6568474233659923
+[15:35:11.219] noisy clients
+[15:36:11.339] Round 16: client 17 loss: 0.5716610261706807
+[15:36:11.339] clean clients
+[15:36:44.524] Round 16: client 18 loss: 0.12444306699268466
+[15:36:44.525] clean clients
+[15:37:18.769] Round 16: client 19 loss: 0.12037196981587579
+[15:37:30.863] ******** round: 16, acc: 0.9654, bacc: 0.9654 ********
+[15:37:30.864] [[4889  111]
+ [ 235 4765]]
+[15:37:30.864] best bacc: 0.9654, now bacc: 0.9654
+[15:37:30.865] 
+
+[15:37:30.871] clean clients
+[15:38:05.585] Round 17: client 0 loss: 0.12234869203967787
+[15:38:05.585] noisy clients
+[15:38:50.511] Round 17: client 1 loss: 0.5760175416866938
+[15:38:50.511] clean clients
+[15:39:37.573] Round 17: client 2 loss: 0.11416641097943606
+[15:39:37.573] noisy clients
+[15:40:08.424] Round 17: client 3 loss: 0.5789703321776221
+[15:40:08.425] clean clients
+[15:40:44.169] Round 17: client 4 loss: 0.11978516930366476
+[15:40:44.169] clean clients
+[15:41:32.259] Round 17: client 5 loss: 0.13849893661813353
+[15:41:32.259] noisy clients
+[15:42:11.063] Round 17: client 6 loss: 0.5994057979713492
+[15:42:11.064] clean clients
+[15:42:52.296] Round 17: client 7 loss: 0.10789902890766305
+[15:42:52.296] noisy clients
+[15:43:26.869] Round 17: client 8 loss: 0.6132422415971756
+[15:43:26.869] noisy clients
+[15:43:55.530] Round 17: client 9 loss: 0.6100121862748089
+[15:43:55.530] noisy clients
+[15:44:25.098] Round 17: client 10 loss: 0.6149280325682075
+[15:44:25.098] clean clients
+[15:45:16.241] Round 17: client 11 loss: 0.1283731705932085
+[15:45:16.242] noisy clients
+[15:45:42.990] Round 17: client 12 loss: 0.5769898336459982
+[15:45:42.990] noisy clients
+[15:46:34.318] Round 17: client 13 loss: 0.5269178217649461
+[15:46:34.319] clean clients
+[15:46:53.687] Round 17: client 14 loss: 0.13172400046760838
+[15:46:53.687] clean clients
+[15:47:46.685] Round 17: client 15 loss: 0.10018561179719945
+[15:47:46.686] noisy clients
+[15:48:18.386] Round 17: client 16 loss: 0.6592406269322094
+[15:48:18.387] noisy clients
+[15:49:18.433] Round 17: client 17 loss: 0.5683492581396644
+[15:49:18.433] clean clients
+[15:49:51.268] Round 17: client 18 loss: 0.12034299444697852
+[15:49:51.269] clean clients
+[15:50:26.366] Round 17: client 19 loss: 0.11850393551534841
+[15:50:37.910] ******** round: 17, acc: 0.9652, bacc: 0.9652 ********
+[15:50:37.910] [[4892  108]
+ [ 240 4760]]
+[15:50:37.911] best bacc: 0.9654, now bacc: 0.9652000000000001
+[15:50:37.912] 
+
+[15:50:37.917] clean clients
+[15:51:13.145] Round 18: client 0 loss: 0.11525379064392874
+[15:51:13.145] noisy clients
+[15:51:58.900] Round 18: client 1 loss: 0.5715310749908289
+[15:51:58.900] clean clients
+[15:52:46.549] Round 18: client 2 loss: 0.11193283437417026
+[15:52:46.549] noisy clients
+[15:53:17.926] Round 18: client 3 loss: 0.5764100276998112
+[15:53:17.926] clean clients
+[15:53:54.571] Round 18: client 4 loss: 0.1162185637545595
+[15:53:54.571] clean clients
+[15:54:42.584] Round 18: client 5 loss: 0.13598652338556383
+[15:54:42.584] noisy clients
+[15:55:22.602] Round 18: client 6 loss: 0.6036408574808212
+[15:55:22.602] clean clients
+[15:56:05.208] Round 18: client 7 loss: 0.10453380512682578
+[15:56:05.209] noisy clients
+[15:56:40.212] Round 18: client 8 loss: 0.6090698738574981
+[15:56:40.212] noisy clients
+[15:57:09.151] Round 18: client 9 loss: 0.6023704708206887
+[15:57:09.152] noisy clients
+[15:57:39.077] Round 18: client 10 loss: 0.6076746743586329
+[15:57:39.077] clean clients
+[15:58:31.266] Round 18: client 11 loss: 0.1263196933404522
+[15:58:31.267] noisy clients
+[15:58:58.245] Round 18: client 12 loss: 0.5744550477475563
+[15:58:58.245] noisy clients
+[15:59:50.503] Round 18: client 13 loss: 0.5230268844121542
+[15:59:50.503] clean clients
+[16:00:10.194] Round 18: client 14 loss: 0.1186932184745868
+[16:00:10.194] clean clients
+[16:01:02.950] Round 18: client 15 loss: 0.10035370653178147
+[16:01:02.950] noisy clients
+[16:01:35.164] Round 18: client 16 loss: 0.655088831216861
+[16:01:35.164] noisy clients
+[16:02:36.471] Round 18: client 17 loss: 0.5656698800590881
+[16:02:36.471] clean clients
+[16:03:09.656] Round 18: client 18 loss: 0.11483661708758867
+[16:03:09.656] clean clients
+[16:03:44.216] Round 18: client 19 loss: 0.11793696407900274
+[16:03:56.373] ******** round: 18, acc: 0.9643, bacc: 0.9643 ********
+[16:03:56.373] [[4836  164]
+ [ 193 4807]]
+[16:03:56.374] best bacc: 0.9654, now bacc: 0.9642999999999999
+[16:03:56.374] 
+
+[16:03:56.381] clean clients
+[16:04:31.169] Round 19: client 0 loss: 0.11336208105231041
+[16:04:31.170] noisy clients
+[16:05:17.031] Round 19: client 1 loss: 0.5670227911855494
+[16:05:17.032] clean clients
+[16:06:04.494] Round 19: client 2 loss: 0.11041102450759858
+[16:06:04.494] noisy clients
+[16:06:35.290] Round 19: client 3 loss: 0.5732523346319794
+[16:06:35.291] clean clients
+[16:07:11.822] Round 19: client 4 loss: 0.11132845107725338
+[16:07:11.822] clean clients
+[16:08:00.159] Round 19: client 5 loss: 0.13505265152626583
+[16:08:00.159] noisy clients
+[16:08:40.338] Round 19: client 6 loss: 0.5953546652583037
+[16:08:40.339] clean clients
+[16:09:22.360] Round 19: client 7 loss: 0.10310500971537984
+[16:09:22.360] noisy clients
+[16:09:57.564] Round 19: client 8 loss: 0.6082539037704467
+[16:09:57.565] noisy clients
+[16:10:26.531] Round 19: client 9 loss: 0.6011159787575404
+[16:10:26.532] noisy clients
+[16:10:56.425] Round 19: client 10 loss: 0.6053999686130772
+[16:10:56.425] clean clients
+[16:11:48.336] Round 19: client 11 loss: 0.1214703944633719
+[16:11:48.336] noisy clients
+[16:12:14.733] Round 19: client 12 loss: 0.5679308868469077
+[16:12:14.734] noisy clients
+[16:13:06.715] Round 19: client 13 loss: 0.5198338323067396
+[16:13:06.715] clean clients
+[16:13:25.976] Round 19: client 14 loss: 0.11262882138664525
+[16:13:25.976] clean clients
+[16:14:19.281] Round 19: client 15 loss: 0.09845450814417067
+[16:14:19.281] noisy clients
+[16:14:51.658] Round 19: client 16 loss: 0.6548867106437684
+[16:14:51.658] noisy clients
+[16:15:51.928] Round 19: client 17 loss: 0.5594072363001811
+[16:15:51.928] clean clients
+[16:16:25.403] Round 19: client 18 loss: 0.11105577395832603
+[16:16:25.403] clean clients
+[16:17:00.311] Round 19: client 19 loss: 0.11885435836592399
+[16:17:12.901] ******** round: 19, acc: 0.9658, bacc: 0.9658 ********
+[16:17:12.902] [[4858  142]
+ [ 200 4800]]
+[16:17:12.903] best bacc: 0.9658, now bacc: 0.9658
+[16:17:12.903] 
+
+[16:17:12.909] clean clients
+[16:17:47.865] Round 20: client 0 loss: 0.11600578843222169
+[16:17:47.865] noisy clients
+[16:18:33.587] Round 20: client 1 loss: 0.566953570466666
+[16:18:33.587] clean clients
+[16:19:21.926] Round 20: client 2 loss: 0.11219653259722169
+[16:19:21.927] noisy clients
+[16:19:52.872] Round 20: client 3 loss: 0.5679042375513486
+[16:19:52.872] clean clients
+[16:20:29.155] Round 20: client 4 loss: 0.11215304516173333
+[16:20:29.156] clean clients
+[16:21:17.389] Round 20: client 5 loss: 0.13084327103350452
+[16:21:17.389] noisy clients
+[16:21:57.410] Round 20: client 6 loss: 0.5959455361171644
+[16:21:57.410] clean clients
+[16:22:39.246] Round 20: client 7 loss: 0.09755640758974171
+[16:22:39.247] noisy clients
+[16:23:13.571] Round 20: client 8 loss: 0.5995853662490844
+[16:23:13.571] noisy clients
+[16:23:42.854] Round 20: client 9 loss: 0.5929231830671722
+[16:23:42.854] noisy clients
+[16:24:12.868] Round 20: client 10 loss: 0.5996974831929913
+[16:24:12.868] clean clients
+[16:25:04.869] Round 20: client 11 loss: 0.12215087747681219
+[16:25:04.869] noisy clients
+[16:25:31.773] Round 20: client 12 loss: 0.5679289956676199
+[16:25:31.773] noisy clients
+[16:26:23.355] Round 20: client 13 loss: 0.5167906844615936
+[16:26:23.355] clean clients
+[16:26:42.995] Round 20: client 14 loss: 0.11413751240322986
+[16:26:42.996] clean clients
+[16:27:36.365] Round 20: client 15 loss: 0.09394477328959297
+[16:27:36.366] noisy clients
+[16:28:08.732] Round 20: client 16 loss: 0.6488285585855827
+[16:28:08.732] noisy clients
+[16:29:08.599] Round 20: client 17 loss: 0.5594436326662005
+[16:29:08.599] clean clients
+[16:29:42.015] Round 20: client 18 loss: 0.11295162719601752
+[16:29:42.015] clean clients
+[16:30:16.816] Round 20: client 19 loss: 0.11244726360230675
+[16:30:29.222] ******** round: 20, acc: 0.9671, bacc: 0.9671 ********
+[16:30:29.222] [[4895  105]
+ [ 224 4776]]
+[16:30:29.223] best bacc: 0.9671000000000001, now bacc: 0.9671000000000001
+[16:30:29.223] 
+
+[16:30:29.228] clean clients
+[16:31:04.413] Round 21: client 0 loss: 0.11541928536814931
+[16:31:04.414] noisy clients
+[16:31:50.014] Round 21: client 1 loss: 0.5635376736699115
+[16:31:50.014] clean clients
+[16:32:38.034] Round 21: client 2 loss: 0.1079468112984788
+[16:32:38.035] noisy clients
+[16:33:09.044] Round 21: client 3 loss: 0.5682721040078571
+[16:33:09.045] clean clients
+[16:33:45.713] Round 21: client 4 loss: 0.10823595167367565
+[16:33:45.714] clean clients
+[16:34:33.888] Round 21: client 5 loss: 0.1270681921003896
+[16:34:33.888] noisy clients
+[16:35:14.329] Round 21: client 6 loss: 0.588254459171879
+[16:35:14.329] clean clients
+[16:35:56.179] Round 21: client 7 loss: 0.10140652752706555
+[16:35:56.179] noisy clients
+[16:36:31.402] Round 21: client 8 loss: 0.6032174118041992
+[16:36:31.402] noisy clients
+[16:37:01.048] Round 21: client 9 loss: 0.5982616462543899
+[16:37:01.048] noisy clients
+[16:37:31.255] Round 21: client 10 loss: 0.5998276031955525
+[16:37:31.255] clean clients
+[16:38:23.184] Round 21: client 11 loss: 0.11713740605795878
+[16:38:23.185] noisy clients
+[16:38:50.231] Round 21: client 12 loss: 0.5706535407203309
+[16:38:50.231] noisy clients
+[16:39:42.019] Round 21: client 13 loss: 0.5111559233890894
+[16:39:42.020] clean clients
+[16:40:01.989] Round 21: client 14 loss: 0.10778338997003933
+[16:40:01.989] clean clients
+[16:40:54.841] Round 21: client 15 loss: 0.09533624228000878
+[16:40:54.842] noisy clients
+[16:41:27.018] Round 21: client 16 loss: 0.6445698302525742
+[16:41:27.019] noisy clients
+[16:42:26.881] Round 21: client 17 loss: 0.554602881511226
+[16:42:26.882] clean clients
+[16:43:01.053] Round 21: client 18 loss: 0.11059335409300335
+[16:43:01.053] clean clients
+[16:43:35.561] Round 21: client 19 loss: 0.11597581597830671
+[16:43:47.398] ******** round: 21, acc: 0.9667, bacc: 0.9667 ********
+[16:43:47.398] [[4853  147]
+ [ 186 4814]]
+[16:43:47.399] best bacc: 0.9671000000000001, now bacc: 0.9667
+[16:43:47.399] 
+
+[16:43:47.405] clean clients
+[16:44:22.803] Round 22: client 0 loss: 0.11495559489223231
+[16:44:22.803] noisy clients
+[16:45:07.947] Round 22: client 1 loss: 0.5583156756169739
+[16:45:07.947] clean clients
+[16:45:56.104] Round 22: client 2 loss: 0.10168176529857745
+[16:45:56.104] noisy clients
+[16:46:27.187] Round 22: client 3 loss: 0.5626713427848049
+[16:46:27.188] clean clients
+[16:47:03.630] Round 22: client 4 loss: 0.10269802637439503
+[16:47:03.630] clean clients
+[16:47:51.552] Round 22: client 5 loss: 0.12846372267494927
+[16:47:51.552] noisy clients
+[16:48:31.771] Round 22: client 6 loss: 0.585201929945524
+[16:48:31.772] clean clients
+[16:49:13.238] Round 22: client 7 loss: 0.094049979801607
+[16:49:13.239] noisy clients
+[16:49:48.309] Round 22: client 8 loss: 0.598623438692093
+[16:49:48.309] noisy clients
+[16:50:18.634] Round 22: client 9 loss: 0.588621304490987
+[16:50:18.635] noisy clients
+[16:50:49.990] Round 22: client 10 loss: 0.591309309999148
+[16:50:49.991] clean clients
+[16:51:42.538] Round 22: client 11 loss: 0.11888761097996385
+[16:51:42.538] noisy clients
+[16:52:10.497] Round 22: client 12 loss: 0.5597122733897351
+[16:52:10.498] noisy clients
+[16:53:02.524] Round 22: client 13 loss: 0.5077925626131204
+[16:53:02.525] clean clients
+[16:53:22.800] Round 22: client 14 loss: 0.10332981216783325
+[16:53:22.801] clean clients
+[16:54:16.390] Round 22: client 15 loss: 0.09668242646024582
+[16:54:16.390] noisy clients
+[16:54:49.710] Round 22: client 16 loss: 0.6410704087497842
+[16:54:49.710] noisy clients
+[16:55:49.756] Round 22: client 17 loss: 0.5511726646964726
+[16:55:49.757] clean clients
+[16:56:23.839] Round 22: client 18 loss: 0.11553896146872682
+[16:56:23.839] clean clients
+[16:56:59.071] Round 22: client 19 loss: 0.10479345736188854
+[16:57:11.117] ******** round: 22, acc: 0.9675, bacc: 0.9675 ********
+[16:57:11.117] [[4902   98]
+ [ 227 4773]]
+[16:57:11.119] best bacc: 0.9675, now bacc: 0.9675
+[16:57:11.119] 
+
+[16:57:11.126] clean clients
+[16:57:46.962] Round 23: client 0 loss: 0.10445502669294209
+[16:57:46.962] noisy clients
+[16:58:33.475] Round 23: client 1 loss: 0.5504801753021422
+[16:58:33.475] clean clients
+[16:59:21.859] Round 23: client 2 loss: 0.11108689418655227
+[16:59:21.860] noisy clients
+[16:59:53.309] Round 23: client 3 loss: 0.560087198178683
+[16:59:53.309] clean clients
+[17:00:30.531] Round 23: client 4 loss: 0.10332125927162461
+[17:00:30.532] clean clients
+[17:01:18.990] Round 23: client 5 loss: 0.12646064832806586
+[17:01:18.990] noisy clients
+[17:01:59.950] Round 23: client 6 loss: 0.5804738946106969
+[17:01:59.950] clean clients
+[17:02:42.563] Round 23: client 7 loss: 0.09833548982643041
+[17:02:42.563] noisy clients
+[17:03:17.603] Round 23: client 8 loss: 0.5933927716255188
+[17:03:17.603] noisy clients
+[17:03:46.919] Round 23: client 9 loss: 0.5902510347903943
+[17:03:46.919] noisy clients
+[17:04:17.727] Round 23: client 10 loss: 0.5938639213641485
+[17:04:17.727] clean clients
+[17:05:09.739] Round 23: client 11 loss: 0.11339062630975676
+[17:05:09.739] noisy clients
+[17:05:36.679] Round 23: client 12 loss: 0.5638234007865826
+[17:05:36.679] noisy clients
+[17:06:28.275] Round 23: client 13 loss: 0.5020995120818799
+[17:06:28.275] clean clients
+[17:06:47.596] Round 23: client 14 loss: 0.10161185728137692
+[17:06:47.596] clean clients
+[17:07:41.278] Round 23: client 15 loss: 0.0938900606447157
+[17:07:41.278] noisy clients
+[17:08:13.919] Round 23: client 16 loss: 0.6317337381024647
+[17:08:13.919] noisy clients
+[17:09:14.034] Round 23: client 17 loss: 0.5439980396537282
+[17:09:14.034] clean clients
+[17:09:48.012] Round 23: client 18 loss: 0.10544330149439843
+[17:09:48.013] clean clients
+[17:10:22.861] Round 23: client 19 loss: 0.11474997950337676
+[17:10:35.225] ******** round: 23, acc: 0.9656, bacc: 0.9656 ********
+[17:10:35.225] [[4822  178]
+ [ 166 4834]]
+[17:10:35.227] best bacc: 0.9675, now bacc: 0.9656
+[17:10:35.228] 
+
+[17:10:35.235] clean clients
+[17:11:11.184] Round 24: client 0 loss: 0.10761997204792731
+[17:11:11.184] noisy clients
+[17:11:57.264] Round 24: client 1 loss: 0.5482639083017906
+[17:11:57.264] clean clients
+[17:12:45.665] Round 24: client 2 loss: 0.10541384725711134
+[17:12:45.665] noisy clients
+[17:13:17.713] Round 24: client 3 loss: 0.5500553537426252
+[17:13:17.713] clean clients
+[17:13:55.470] Round 24: client 4 loss: 0.10648024709912937
+[17:13:55.471] clean clients
+[17:14:44.687] Round 24: client 5 loss: 0.12600109216335387
+[17:14:44.687] noisy clients
+[17:15:25.580] Round 24: client 6 loss: 0.5807471759465276
+[17:15:25.580] clean clients
+[17:16:08.040] Round 24: client 7 loss: 0.09990548866284132
+[17:16:08.040] noisy clients
+[17:16:43.117] Round 24: client 8 loss: 0.5883264315128327
+[17:16:43.118] noisy clients
+[17:17:13.193] Round 24: client 9 loss: 0.5830081040368361
+[17:17:13.193] noisy clients
+[17:17:44.866] Round 24: client 10 loss: 0.5918850060414385
+[17:17:44.867] clean clients
+[17:18:37.508] Round 24: client 11 loss: 0.11099520159690077
+[17:18:37.508] noisy clients
+[17:19:05.126] Round 24: client 12 loss: 0.5529943067976768
+[17:19:05.126] noisy clients
+[17:19:57.996] Round 24: client 13 loss: 0.4985899693003068
+[17:19:57.997] clean clients
+[17:20:18.472] Round 24: client 14 loss: 0.10095797565579416
+[17:20:18.473] clean clients
+[17:21:13.353] Round 24: client 15 loss: 0.08896624002407524
+[17:21:13.354] noisy clients
+[17:21:47.006] Round 24: client 16 loss: 0.6341465449740744
+[17:21:47.007] noisy clients
+[17:22:47.345] Round 24: client 17 loss: 0.539740966240912
+[17:22:47.346] clean clients
+[17:23:21.645] Round 24: client 18 loss: 0.10854120052333735
+[17:23:21.645] clean clients
+[17:23:57.234] Round 24: client 19 loss: 0.10449335785379925
+[17:24:08.143] ******** round: 24, acc: 0.9685, bacc: 0.9685 ********
+[17:24:08.144] [[4875  125]
+ [ 190 4810]]
+[17:24:08.145] best bacc: 0.9684999999999999, now bacc: 0.9684999999999999
+[17:24:08.146] 
+
+[17:24:08.155] clean clients
+[17:24:44.305] Round 25: client 0 loss: 0.10593775698708859
+[17:24:44.305] noisy clients
+[17:25:31.319] Round 25: client 1 loss: 0.5420934309562047
+[17:25:31.319] clean clients
+[17:26:20.425] Round 25: client 2 loss: 0.0966516922319388
+[17:26:20.425] noisy clients
+[17:26:52.287] Round 25: client 3 loss: 0.5437503221843925
+[17:26:52.288] clean clients
+[17:27:29.563] Round 25: client 4 loss: 0.10093233943857911
+[17:27:29.563] clean clients
+[17:28:17.832] Round 25: client 5 loss: 0.12198871923566638
+[17:28:17.833] noisy clients
+[17:28:58.036] Round 25: client 6 loss: 0.5699380429018113
+[17:28:58.036] clean clients
+[17:29:41.283] Round 25: client 7 loss: 0.09649514875676647
+[17:29:41.283] noisy clients
+[17:30:16.515] Round 25: client 8 loss: 0.5768091204166412
+[17:30:16.515] noisy clients
+[17:30:45.934] Round 25: client 9 loss: 0.5684326942644867
+[17:30:45.935] noisy clients
+[17:31:16.573] Round 25: client 10 loss: 0.5825079904662238
+[17:31:16.573] clean clients
+[17:32:08.950] Round 25: client 11 loss: 0.10860928783369124
+[17:32:08.950] noisy clients
+[17:32:36.099] Round 25: client 12 loss: 0.5433435615706952
+[17:32:36.099] noisy clients
+[17:33:28.372] Round 25: client 13 loss: 0.48859668507025794
+[17:33:28.372] clean clients
+[17:33:47.842] Round 25: client 14 loss: 0.09746773769147694
+[17:33:47.842] clean clients
+[17:34:41.871] Round 25: client 15 loss: 0.09141739221111415
+[17:34:41.872] noisy clients
+[17:35:15.676] Round 25: client 16 loss: 0.6242001595150711
+[17:35:15.676] noisy clients
+[17:36:16.261] Round 25: client 17 loss: 0.5325300272375215
+[17:36:16.261] clean clients
+[17:36:50.232] Round 25: client 18 loss: 0.10293879952407212
+[17:36:50.232] clean clients
+[17:37:25.962] Round 25: client 19 loss: 0.1036603043736497
+[17:37:38.030] ******** round: 25, acc: 0.9642, bacc: 0.9642 ********
+[17:37:38.030] [[4787  213]
+ [ 145 4855]]
+[17:37:38.031] best bacc: 0.9684999999999999, now bacc: 0.9642
+[17:37:38.031] 
+
+[17:37:38.037] clean clients
+[17:38:13.774] Round 26: client 0 loss: 0.10843865542966347
+[17:38:13.774] noisy clients
+[17:38:59.670] Round 26: client 1 loss: 0.5322770518915994
+[17:38:59.670] clean clients
+[17:39:47.208] Round 26: client 2 loss: 0.09485548193628887
+[17:39:47.209] noisy clients
+[17:40:18.719] Round 26: client 3 loss: 0.5301785709602492
+[17:40:18.719] clean clients
+[17:40:54.889] Round 26: client 4 loss: 0.10161494657432638
+[17:40:54.889] clean clients
+[17:41:42.321] Round 26: client 5 loss: 0.12450689371358954
+[17:41:42.322] noisy clients
+[17:42:20.870] Round 26: client 6 loss: 0.5614398397961441
+[17:42:20.870] clean clients
+[17:43:02.831] Round 26: client 7 loss: 0.09526000972248737
+[17:43:02.832] noisy clients
+[17:43:37.043] Round 26: client 8 loss: 0.5705964280128479
+[17:43:37.043] noisy clients
+[17:44:05.813] Round 26: client 9 loss: 0.5603245379001487
+[17:44:05.814] noisy clients
+[17:44:36.180] Round 26: client 10 loss: 0.5730158055546107
+[17:44:36.180] clean clients
+[17:45:27.693] Round 26: client 11 loss: 0.10755026378205217
+[17:45:27.693] noisy clients
+[17:45:54.362] Round 26: client 12 loss: 0.5409543948604706
+[17:45:54.362] noisy clients
+[17:46:45.592] Round 26: client 13 loss: 0.48173224682991317
+[17:46:45.592] clean clients
+[17:47:04.795] Round 26: client 14 loss: 0.10300483800843359
+[17:47:04.795] clean clients
+[17:47:57.488] Round 26: client 15 loss: 0.09074105238066392
+[17:47:57.488] noisy clients
+[17:48:30.376] Round 26: client 16 loss: 0.6146016076589241
+[17:48:30.377] noisy clients
+[17:49:29.213] Round 26: client 17 loss: 0.5241284883568902
+[17:49:29.214] clean clients
+[17:50:02.983] Round 26: client 18 loss: 0.09855176088538893
+[17:50:02.983] clean clients
+[17:50:37.755] Round 26: client 19 loss: 0.09580266315547027
+[17:50:50.688] ******** round: 26, acc: 0.9679, bacc: 0.9679 ********
+[17:50:50.689] [[4863  137]
+ [ 184 4816]]
+[17:50:50.690] best bacc: 0.9684999999999999, now bacc: 0.9679
+[17:50:50.691] 
+
+[17:50:50.699] clean clients
+[17:51:25.474] Round 27: client 0 loss: 0.10192694490925477
+[17:51:25.474] noisy clients
+[17:52:11.060] Round 27: client 1 loss: 0.5298981794510924
+[17:52:11.060] clean clients
+[17:52:58.712] Round 27: client 2 loss: 0.0953538333928061
+[17:52:58.712] noisy clients
+[17:53:30.521] Round 27: client 3 loss: 0.534777066643749
+[17:53:30.521] clean clients
+[17:54:07.297] Round 27: client 4 loss: 0.100993053439144
+[17:54:07.297] clean clients
+[17:54:55.877] Round 27: client 5 loss: 0.12424522885428917
+[17:54:55.877] noisy clients
+[17:55:35.772] Round 27: client 6 loss: 0.5520166268762277
+[17:55:35.772] clean clients
+[17:56:19.076] Round 27: client 7 loss: 0.08956573114520613
+[17:56:19.077] noisy clients
+[17:56:53.734] Round 27: client 8 loss: 0.5693216949462891
+[17:56:53.734] noisy clients
+[17:57:22.493] Round 27: client 9 loss: 0.5569142731965757
+[17:57:22.493] noisy clients
+[17:57:53.086] Round 27: client 10 loss: 0.5660004943609238
+[17:57:53.087] clean clients
+[17:58:44.363] Round 27: client 11 loss: 0.10637947372669217
+[17:58:44.363] noisy clients
+[17:59:10.829] Round 27: client 12 loss: 0.5265747798884168
+[17:59:10.829] noisy clients
+[18:00:02.693] Round 27: client 13 loss: 0.4737338725572977
+[18:00:02.693] clean clients
+[18:00:22.495] Round 27: client 14 loss: 0.10314068036402264
+[18:00:22.495] clean clients
+[18:01:15.607] Round 27: client 15 loss: 0.08671602947161869
+[18:01:15.607] noisy clients
+[18:01:48.111] Round 27: client 16 loss: 0.6130687542960175
+[18:01:48.112] noisy clients
+[18:02:47.157] Round 27: client 17 loss: 0.5173375297321503
+[18:02:47.157] clean clients
+[18:03:20.531] Round 27: client 18 loss: 0.10078139965891415
+[18:03:20.532] clean clients
+[18:03:55.615] Round 27: client 19 loss: 0.10150134998633445
+[18:04:07.931] ******** round: 27, acc: 0.9690, bacc: 0.9690 ********
+[18:04:07.931] [[4857  143]
+ [ 167 4833]]
+[18:04:07.932] best bacc: 0.9690000000000001, now bacc: 0.9690000000000001
+[18:04:07.932] 
+
+[18:04:07.940] clean clients
+[18:04:43.306] Round 28: client 0 loss: 0.0995065792310583
+[18:04:43.306] noisy clients
+[18:05:30.025] Round 28: client 1 loss: 0.5177784283423708
+[18:05:30.025] clean clients
+[18:06:18.387] Round 28: client 2 loss: 0.09654237105083344
+[18:06:18.387] noisy clients
+[18:06:50.664] Round 28: client 3 loss: 0.5241691511124372
+[18:06:50.664] clean clients
+[18:07:28.527] Round 28: client 4 loss: 0.09565844973549247
+[18:07:28.528] clean clients
+[18:08:17.377] Round 28: client 5 loss: 0.1225097199414312
+[18:08:17.377] noisy clients
+[18:08:57.214] Round 28: client 6 loss: 0.5442283917446525
+[18:08:57.214] clean clients
+[18:09:40.594] Round 28: client 7 loss: 0.08993954212368968
+[18:09:40.595] noisy clients
+[18:10:15.864] Round 28: client 8 loss: 0.5542926002502442
+[18:10:15.864] noisy clients
+[18:10:45.103] Round 28: client 9 loss: 0.5470426990121019
+[18:10:45.104] noisy clients
+[18:11:16.111] Round 28: client 10 loss: 0.5580950705541505
+[18:11:16.111] clean clients
+[18:12:08.917] Round 28: client 11 loss: 0.10706555659142544
+[18:12:08.917] noisy clients
+[18:12:36.485] Round 28: client 12 loss: 0.5166601423887497
+[18:12:36.485] noisy clients
+[18:13:29.788] Round 28: client 13 loss: 0.4659425715452586
+[18:13:29.788] clean clients
+[18:13:50.063] Round 28: client 14 loss: 0.09695198712932566
+[18:13:50.064] clean clients
+[18:14:44.360] Round 28: client 15 loss: 0.08665111080723557
+[18:14:44.360] noisy clients
+[18:15:18.204] Round 28: client 16 loss: 0.5991822331889063
+[18:15:18.205] noisy clients
+[18:16:18.304] Round 28: client 17 loss: 0.5062170505523682
+[18:16:18.305] clean clients
+[18:16:52.520] Round 28: client 18 loss: 0.09621256590880296
+[18:16:52.520] clean clients
+[18:17:28.206] Round 28: client 19 loss: 0.09832253027517272
+[18:17:40.683] ******** round: 28, acc: 0.9679, bacc: 0.9679 ********
+[18:17:40.683] [[4828  172]
+ [ 149 4851]]
+[18:17:40.685] best bacc: 0.9690000000000001, now bacc: 0.9679
+[18:17:40.685] 
+
+[18:17:40.692] clean clients
+[18:18:15.736] Round 29: client 0 loss: 0.10254906177795772
+[18:18:15.736] noisy clients
+[18:19:01.233] Round 29: client 1 loss: 0.5086855036162194
+[18:19:01.233] clean clients
+[18:19:49.220] Round 29: client 2 loss: 0.09282379589961512
+[18:19:49.220] noisy clients
+[18:20:20.951] Round 29: client 3 loss: 0.5067157621894564
+[18:20:20.952] clean clients
+[18:20:58.367] Round 29: client 4 loss: 0.09693175091089894
+[18:20:58.367] clean clients
+[18:21:46.751] Round 29: client 5 loss: 0.12424702585547424
+[18:21:46.752] noisy clients
+[18:22:25.661] Round 29: client 6 loss: 0.5315963205837068
+[18:22:25.661] clean clients
+[18:23:07.770] Round 29: client 7 loss: 0.08702002148128596
+[18:23:07.770] noisy clients
+[18:23:42.208] Round 29: client 8 loss: 0.5436398471832276
+[18:23:42.208] noisy clients
+[18:24:11.142] Round 29: client 9 loss: 0.5370004938513625
+[18:24:11.142] noisy clients
+[18:24:41.659] Round 29: client 10 loss: 0.5447423986814639
+[18:24:41.659] clean clients
+[18:25:33.886] Round 29: client 11 loss: 0.10642313414566447
+[18:25:33.886] noisy clients
+[18:26:00.302] Round 29: client 12 loss: 0.5157588108422908
+[18:26:00.302] noisy clients
+[18:26:51.710] Round 29: client 13 loss: 0.4545742973456016
+[18:26:51.710] clean clients
+[18:27:10.941] Round 29: client 14 loss: 0.10067245510655143
+[18:27:10.941] clean clients
+[18:28:02.881] Round 29: client 15 loss: 0.08914511577166775
+[18:28:02.881] noisy clients
+[18:28:35.109] Round 29: client 16 loss: 0.5893200360811673
+[18:28:35.109] noisy clients
+[18:29:33.453] Round 29: client 17 loss: 0.49460630005624096
+[18:29:33.454] clean clients
+[18:30:06.726] Round 29: client 18 loss: 0.09175771462783903
+[18:30:06.727] clean clients
+[18:30:41.168] Round 29: client 19 loss: 0.09427141993477636
+[18:30:53.610] ******** round: 29, acc: 0.9674, bacc: 0.9674 ********
+[18:30:53.611] [[4814  186]
+ [ 140 4860]]
+[18:30:53.612] best bacc: 0.9690000000000001, now bacc: 0.9674
+[18:30:53.613] 
+
+[18:30:53.621] clean clients
+[18:31:28.263] Round 30: client 0 loss: 0.0959594032520916
+[18:31:28.263] noisy clients
+[18:32:13.650] Round 30: client 1 loss: 0.4950195215642452
+[18:32:13.651] clean clients
+[18:33:01.226] Round 30: client 2 loss: 0.09106819243370845
+[18:33:01.226] noisy clients
+[18:33:32.947] Round 30: client 3 loss: 0.4906696957402995
+[18:33:32.948] clean clients
+[18:34:10.316] Round 30: client 4 loss: 0.09764794301583515
+[18:34:10.316] clean clients
+[18:34:59.010] Round 30: client 5 loss: 0.1182599101334213
+[18:34:59.011] noisy clients
+[18:35:37.850] Round 30: client 6 loss: 0.5153408500410263
+[18:35:37.850] clean clients
+[18:36:19.267] Round 30: client 7 loss: 0.08753517231735104
+[18:36:19.267] noisy clients
+[18:36:53.431] Round 30: client 8 loss: 0.5279071295261384
+[18:36:53.431] noisy clients
+[18:37:21.831] Round 30: client 9 loss: 0.5178295707877945
+[18:37:21.831] noisy clients
+[18:37:52.267] Round 30: client 10 loss: 0.5277524108688036
+[18:37:52.268] clean clients
+[18:38:44.132] Round 30: client 11 loss: 0.10438377199466768
+[18:38:44.133] noisy clients
+[18:39:10.587] Round 30: client 12 loss: 0.4972327789093586
+[18:39:10.587] noisy clients
+[18:40:03.076] Round 30: client 13 loss: 0.44452763066842005
+[18:40:03.076] clean clients
+[18:40:22.515] Round 30: client 14 loss: 0.09576875652683278
+[18:40:22.515] clean clients
+[18:41:15.814] Round 30: client 15 loss: 0.08539597677701015
+[18:41:15.814] noisy clients
+[18:41:49.128] Round 30: client 16 loss: 0.575109830727944
+[18:41:49.129] noisy clients
+[18:42:49.943] Round 30: client 17 loss: 0.4802259300083052
+[18:42:49.943] clean clients
+[18:43:24.025] Round 30: client 18 loss: 0.09505900990297186
+[18:43:24.026] clean clients
+[18:43:59.534] Round 30: client 19 loss: 0.09612591093101976
+[18:44:12.086] ******** round: 30, acc: 0.9707, bacc: 0.9707 ********
+[18:44:12.086] [[4866  134]
+ [ 159 4841]]
+[18:44:12.087] best bacc: 0.9706999999999999, now bacc: 0.9706999999999999
+[18:44:12.088] 
+
+[18:44:12.094] clean clients
+[18:44:47.172] Round 31: client 0 loss: 0.09497169797346246
+[18:44:47.172] noisy clients
+[18:45:33.831] Round 31: client 1 loss: 0.4815123014684234
+[18:45:33.831] clean clients
+[18:46:22.453] Round 31: client 2 loss: 0.09088451002900484
+[18:46:22.453] noisy clients
+[18:46:54.809] Round 31: client 3 loss: 0.48990813339395184
+[18:46:54.810] clean clients
+[18:47:32.497] Round 31: client 4 loss: 0.09609229130275501
+[18:47:32.498] clean clients
+[18:48:22.012] Round 31: client 5 loss: 0.11120714458443645
+[18:48:22.012] noisy clients
+[18:49:02.540] Round 31: client 6 loss: 0.5099959396586127
+[18:49:02.540] clean clients
+[18:49:45.822] Round 31: client 7 loss: 0.08399197465003275
+[18:49:45.823] noisy clients
+[18:50:20.058] Round 31: client 8 loss: 0.5206942703723907
+[18:50:20.058] noisy clients
+[18:50:48.346] Round 31: client 9 loss: 0.51047726971846
+[18:50:48.347] noisy clients
+[18:51:19.510] Round 31: client 10 loss: 0.5229001903423557
+[18:51:19.510] clean clients
+[18:52:11.542] Round 31: client 11 loss: 0.09997648052692285
+[18:52:11.542] noisy clients
+[18:52:38.100] Round 31: client 12 loss: 0.4863746118038259
+[18:52:38.100] noisy clients
+[18:53:29.963] Round 31: client 13 loss: 0.4318511505768849
+[18:53:29.963] clean clients
+[18:53:49.420] Round 31: client 14 loss: 0.10217041549397013
+[18:53:49.420] clean clients
+[18:54:42.610] Round 31: client 15 loss: 0.08538434850359138
+[18:54:42.610] noisy clients
+[18:55:15.088] Round 31: client 16 loss: 0.567123684923873
+[18:55:15.088] noisy clients
+[18:56:14.574] Round 31: client 17 loss: 0.47338021751574555
+[18:56:14.574] clean clients
+[18:56:47.998] Round 31: client 18 loss: 0.0927039526307176
+[18:56:47.998] clean clients
+[18:57:22.602] Round 31: client 19 loss: 0.09858313108458608
+[18:57:34.796] ******** round: 31, acc: 0.9705, bacc: 0.9705 ********
+[18:57:34.797] [[4869  131]
+ [ 164 4836]]
+[18:57:34.798] best bacc: 0.9706999999999999, now bacc: 0.9704999999999999
+[18:57:34.798] 
+
+[18:57:34.806] clean clients
+[18:58:10.147] Round 32: client 0 loss: 0.0999308233986915
+[18:58:10.148] noisy clients
+[18:58:55.482] Round 32: client 1 loss: 0.4684558235108852
+[18:58:55.483] clean clients
+[18:59:43.312] Round 32: client 2 loss: 0.0939185383194906
+[18:59:43.312] noisy clients
+[19:00:14.812] Round 32: client 3 loss: 0.4723747591621109
+[19:00:14.812] clean clients
+[19:00:52.160] Round 32: client 4 loss: 0.08915672137643671
+[19:00:52.160] clean clients
+[19:01:41.471] Round 32: client 5 loss: 0.11044999340830267
+[19:01:41.471] noisy clients
+[19:02:20.910] Round 32: client 6 loss: 0.49383757868591627
+[19:02:20.910] clean clients
+[19:03:02.947] Round 32: client 7 loss: 0.08423804491016358
+[19:03:02.947] noisy clients
+[19:03:37.440] Round 32: client 8 loss: 0.5066543834686279
+[19:03:37.441] noisy clients
+[19:04:05.560] Round 32: client 9 loss: 0.4972571351072368
+[19:04:05.561] noisy clients
+[19:04:36.955] Round 32: client 10 loss: 0.5031800401155595
+[19:04:36.956] clean clients
+[19:05:28.691] Round 32: client 11 loss: 0.09698273270679678
+[19:05:28.691] noisy clients
+[19:05:54.846] Round 32: client 12 loss: 0.473195729515654
+[19:05:54.846] noisy clients
+[19:06:46.399] Round 32: client 13 loss: 0.42068824129226884
+[19:06:46.400] clean clients
+[19:07:05.731] Round 32: client 14 loss: 0.09764613721023005
+[19:07:05.731] clean clients
+[19:07:58.439] Round 32: client 15 loss: 0.08117222351537265
+[19:07:58.439] noisy clients
+[19:08:31.250] Round 32: client 16 loss: 0.5500981642140282
+[19:08:31.251] noisy clients
+[19:09:31.460] Round 32: client 17 loss: 0.4608586876283046
+[19:09:31.460] clean clients
+[19:10:05.254] Round 32: client 18 loss: 0.09268024931562707
+[19:10:05.255] clean clients
+[19:10:40.189] Round 32: client 19 loss: 0.09027454447789993
+[19:10:52.355] ******** round: 32, acc: 0.9692, bacc: 0.9692 ********
+[19:10:52.356] [[4834  166]
+ [ 142 4858]]
+[19:10:52.357] best bacc: 0.9706999999999999, now bacc: 0.9692000000000001
+[19:10:52.358] 
+
+[19:10:52.364] clean clients
+[19:11:27.692] Round 33: client 0 loss: 0.09876904690563179
+[19:11:27.692] noisy clients
+[19:12:13.108] Round 33: client 1 loss: 0.4537628322307553
+[19:12:13.108] clean clients
+[19:13:00.613] Round 33: client 2 loss: 0.08626712477191142
+[19:13:00.614] noisy clients
+[19:13:32.388] Round 33: client 3 loss: 0.4586333237588406
+[19:13:32.388] clean clients
+[19:14:09.684] Round 33: client 4 loss: 0.08997421424063748
+[19:14:09.685] clean clients
+[19:14:57.322] Round 33: client 5 loss: 0.109850958208246
+[19:14:57.322] noisy clients
+[19:15:36.171] Round 33: client 6 loss: 0.47618112334994234
+[19:15:36.171] clean clients
+[19:16:17.588] Round 33: client 7 loss: 0.0855064230845668
+[19:16:17.588] noisy clients
+[19:16:52.318] Round 33: client 8 loss: 0.4893819147109985
+[19:16:52.318] noisy clients
+[19:17:21.018] Round 33: client 9 loss: 0.4833339325061031
+[19:17:21.018] noisy clients
+[19:17:51.621] Round 33: client 10 loss: 0.4902382110004072
+[19:17:51.621] clean clients
+[19:18:43.184] Round 33: client 11 loss: 0.10068383397896444
+[19:18:43.184] noisy clients
+[19:19:09.384] Round 33: client 12 loss: 0.45738215677915733
+[19:19:09.385] noisy clients
+[19:20:00.319] Round 33: client 13 loss: 0.4050244724750519
+[19:20:00.319] clean clients
+[19:20:19.690] Round 33: client 14 loss: 0.09718241464595
+[19:20:19.691] clean clients
+[19:21:12.512] Round 33: client 15 loss: 0.07790707978538852
+[19:21:12.512] noisy clients
+[19:21:45.557] Round 33: client 16 loss: 0.5309063325580368
+[19:21:45.558] noisy clients
+[19:22:44.928] Round 33: client 17 loss: 0.4458300945149759
+[19:22:44.929] clean clients
+[19:23:18.638] Round 33: client 18 loss: 0.09042718044072653
+[19:23:18.639] clean clients
+[19:23:52.937] Round 33: client 19 loss: 0.09075336725305334
+[19:24:04.583] ******** round: 33, acc: 0.9703, bacc: 0.9703 ********
+[19:24:04.583] [[4857  143]
+ [ 154 4846]]
+[19:24:04.584] best bacc: 0.9706999999999999, now bacc: 0.9702999999999999
+[19:24:04.584] 
+
+[19:24:04.591] clean clients
+[19:24:39.606] Round 34: client 0 loss: 0.09317369973474501
+[19:24:39.607] noisy clients
+[19:25:23.870] Round 34: client 1 loss: 0.43851077746422523
+[19:25:23.870] clean clients
+[19:26:10.529] Round 34: client 2 loss: 0.08217801035818549
+[19:26:10.529] noisy clients
+[19:26:42.022] Round 34: client 3 loss: 0.44355325885117053
+[19:26:42.022] clean clients
+[19:27:18.296] Round 34: client 4 loss: 0.09414799999492832
+[19:27:18.297] clean clients
+[19:28:06.516] Round 34: client 5 loss: 0.10912593909811649
+[19:28:06.516] noisy clients
+[19:28:45.400] Round 34: client 6 loss: 0.4615457730431135
+[19:28:45.400] clean clients
+[19:29:27.124] Round 34: client 7 loss: 0.08500382777579785
+[19:29:27.124] noisy clients
+[19:30:01.214] Round 34: client 8 loss: 0.47241122481822967
+[19:30:01.215] noisy clients
+[19:30:30.357] Round 34: client 9 loss: 0.4631482123452074
+[19:30:30.357] noisy clients
+[19:31:00.007] Round 34: client 10 loss: 0.47364772080823225
+[19:31:00.008] clean clients
+[19:31:51.663] Round 34: client 11 loss: 0.10093670358116776
+[19:31:51.663] noisy clients
+[19:32:19.795] Round 34: client 12 loss: 0.4434763284439736
+[19:32:19.795] noisy clients
+[19:33:13.131] Round 34: client 13 loss: 0.39095762934440226
+[19:33:13.131] clean clients
+[19:33:33.531] Round 34: client 14 loss: 0.08759831176574032
+[19:33:33.531] clean clients
+[19:34:27.654] Round 34: client 15 loss: 0.0831548839470649
+[19:34:27.654] noisy clients
+[19:35:01.456] Round 34: client 16 loss: 0.5178380786608427
+[19:35:01.456] noisy clients
+[19:36:03.791] Round 34: client 17 loss: 0.42914003671256734
+[19:36:03.791] clean clients
+[19:36:38.019] Round 34: client 18 loss: 0.09127265721929412
+[19:36:38.019] clean clients
+[19:37:13.693] Round 34: client 19 loss: 0.0901499335226432
+[19:37:25.471] ******** round: 34, acc: 0.9712, bacc: 0.9712 ********
+[19:37:25.471] [[4881  119]
+ [ 169 4831]]
+[19:37:25.472] best bacc: 0.9712, now bacc: 0.9712
+[19:37:25.472] 
+
+[19:37:25.478] clean clients
+[19:38:01.996] Round 35: client 0 loss: 0.10197507012510458
+[19:38:01.996] noisy clients
+[19:38:47.380] Round 35: client 1 loss: 0.42006236637632055
+[19:38:47.380] clean clients
+[19:39:35.993] Round 35: client 2 loss: 0.08493274120239622
+[19:39:35.993] noisy clients
+[19:40:08.147] Round 35: client 3 loss: 0.4203896064427681
+[19:40:08.147] clean clients
+[19:40:46.177] Round 35: client 4 loss: 0.09259848705481125
+[19:40:46.177] clean clients
+[19:41:35.637] Round 35: client 5 loss: 0.10814149607333161
+[19:41:35.638] noisy clients
+[19:42:16.507] Round 35: client 6 loss: 0.44539278905813384
+[19:42:16.507] clean clients
+[19:42:59.698] Round 35: client 7 loss: 0.08229239862949517
+[19:42:59.699] noisy clients
+[19:43:35.507] Round 35: client 8 loss: 0.4565122474908828
+[19:43:35.508] noisy clients
+[19:44:05.431] Round 35: client 9 loss: 0.44664810784891545
+[19:44:05.431] noisy clients
+[19:44:36.596] Round 35: client 10 loss: 0.45861863667766245
+[19:44:36.596] clean clients
+[19:45:29.743] Round 35: client 11 loss: 0.0975873918089544
+[19:45:29.743] noisy clients
+[19:45:58.009] Round 35: client 12 loss: 0.4223493912118547
+[19:45:58.009] noisy clients
+[19:46:50.801] Round 35: client 13 loss: 0.3720921843785506
+[19:46:50.801] clean clients
+[19:47:11.004] Round 35: client 14 loss: 0.08967514478787779
+[19:47:11.005] clean clients
+[19:48:05.578] Round 35: client 15 loss: 0.08250554852009295
+[19:48:05.578] noisy clients
+[19:48:38.241] Round 35: client 16 loss: 0.49714370578782174
+[19:48:38.241] noisy clients
+[19:49:37.994] Round 35: client 17 loss: 0.41495762427040583
+[19:49:37.994] clean clients
+[19:50:11.512] Round 35: client 18 loss: 0.09107134732870213
+[19:50:11.512] clean clients
+[19:50:46.143] Round 35: client 19 loss: 0.08919295784732213
+[19:50:57.720] ******** round: 35, acc: 0.9706, bacc: 0.9706 ********
+[19:50:57.721] [[4853  147]
+ [ 147 4853]]
+[19:50:57.722] best bacc: 0.9712, now bacc: 0.9706
+[19:50:57.723] 
+
+[19:50:57.729] clean clients
+[19:51:32.871] Round 36: client 0 loss: 0.08906556270647818
+[19:51:32.871] noisy clients
+[19:52:17.783] Round 36: client 1 loss: 0.40305061107944873
+[19:52:17.783] clean clients
+[19:53:05.502] Round 36: client 2 loss: 0.08471577054660537
+[19:53:05.503] noisy clients
+[19:53:37.070] Round 36: client 3 loss: 0.40999444350600245
+[19:53:37.070] clean clients
+[19:54:13.608] Round 36: client 4 loss: 0.09935733811293221
+[19:54:13.608] clean clients
+[19:55:01.667] Round 36: client 5 loss: 0.10695532580820036
+[19:55:01.667] noisy clients
+[19:55:40.345] Round 36: client 6 loss: 0.42698583943503243
+[19:55:40.345] clean clients
+[19:56:21.242] Round 36: client 7 loss: 0.07880184079806965
+[19:56:21.243] noisy clients
+[19:56:54.692] Round 36: client 8 loss: 0.4373850136041641
+[19:56:54.692] noisy clients
+[19:57:23.676] Round 36: client 9 loss: 0.432475652998569
+[19:57:23.676] noisy clients
+[19:57:53.296] Round 36: client 10 loss: 0.43580147058323576
+[19:57:53.296] clean clients
+[19:58:44.557] Round 36: client 11 loss: 0.09575751051001706
+[19:58:44.557] noisy clients
+[19:59:10.910] Round 36: client 12 loss: 0.40643639951310256
+[19:59:10.911] noisy clients
+[20:00:02.466] Round 36: client 13 loss: 0.35728935815584967
+[20:00:02.466] clean clients
+[20:00:22.254] Round 36: client 14 loss: 0.09864152929435173
+[20:00:22.254] clean clients
+[20:01:14.412] Round 36: client 15 loss: 0.07795453117823506
+[20:01:14.412] noisy clients
+[20:01:45.929] Round 36: client 16 loss: 0.4798239630256963
+[20:01:45.929] noisy clients
+[20:02:45.714] Round 36: client 17 loss: 0.39449881850111435
+[20:02:45.715] clean clients
+[20:03:18.993] Round 36: client 18 loss: 0.0929161948548194
+[20:03:18.993] clean clients
+[20:03:53.385] Round 36: client 19 loss: 0.09250496622225664
+[20:04:05.715] ******** round: 36, acc: 0.9703, bacc: 0.9703 ********
+[20:04:05.715] [[4846  154]
+ [ 143 4857]]
+[20:04:05.716] best bacc: 0.9712, now bacc: 0.9702999999999999
+[20:04:05.716] 
+
+[20:04:05.725] clean clients
+[20:04:40.370] Round 37: client 0 loss: 0.09211102896244985
+[20:04:40.370] noisy clients
+[20:05:25.699] Round 37: client 1 loss: 0.38319862768763585
+[20:05:25.699] clean clients
+[20:06:12.522] Round 37: client 2 loss: 0.08228070851544622
+[20:06:12.522] noisy clients
+[20:06:44.255] Round 37: client 3 loss: 0.38656319747013707
+[20:06:44.255] clean clients
+[20:07:21.165] Round 37: client 4 loss: 0.09748238439530228
+[20:07:21.165] clean clients
+[20:08:09.697] Round 37: client 5 loss: 0.10769946987450756
+[20:08:09.697] noisy clients
+[20:08:49.224] Round 37: client 6 loss: 0.40655690472142225
+[20:08:49.224] clean clients
+[20:09:30.327] Round 37: client 7 loss: 0.07552756280945308
+[20:09:30.328] noisy clients
+[20:10:03.944] Round 37: client 8 loss: 0.4162568145513535
+[20:10:03.944] noisy clients
+[20:10:32.710] Round 37: client 9 loss: 0.40937488660508514
+[20:10:32.711] noisy clients
+[20:11:02.794] Round 37: client 10 loss: 0.4179835264605504
+[20:11:02.794] clean clients
+[20:11:54.345] Round 37: client 11 loss: 0.09443920590959523
+[20:11:54.345] noisy clients
+[20:12:21.356] Round 37: client 12 loss: 0.38535308747532515
+[20:12:21.356] noisy clients
+[20:13:12.497] Round 37: client 13 loss: 0.33821988111887225
+[20:13:12.497] clean clients
+[20:13:31.601] Round 37: client 14 loss: 0.09383026549903056
+[20:13:31.601] clean clients
+[20:14:23.770] Round 37: client 15 loss: 0.08213411175863858
+[20:14:23.771] noisy clients
+[20:14:55.399] Round 37: client 16 loss: 0.46000464270766983
+[20:14:55.400] noisy clients
+[20:15:55.058] Round 37: client 17 loss: 0.37893465173036256
+[20:15:55.058] clean clients
+[20:16:27.822] Round 37: client 18 loss: 0.08867687539607022
+[20:16:27.822] clean clients
+[20:17:01.953] Round 37: client 19 loss: 0.08596130053348028
+[20:17:13.304] ******** round: 37, acc: 0.9691, bacc: 0.9691 ********
+[20:17:13.304] [[4834  166]
+ [ 143 4857]]
+[20:17:13.305] best bacc: 0.9712, now bacc: 0.9691000000000001
+[20:17:13.306] 
+
+[20:17:13.311] clean clients
+[20:17:47.104] Round 38: client 0 loss: 0.0866308286357921
+[20:17:47.105] noisy clients
+[20:18:31.981] Round 38: client 1 loss: 0.3631397136087929
+[20:18:31.982] clean clients
+[20:19:18.196] Round 38: client 2 loss: 0.07805023244626678
+[20:19:18.197] noisy clients
+[20:19:49.415] Round 38: client 3 loss: 0.3675465519406966
+[20:19:49.416] clean clients
+[20:20:27.011] Round 38: client 4 loss: 0.08791395483120004
+[20:20:27.012] clean clients
+[20:21:16.198] Round 38: client 5 loss: 0.10538474254986659
+[20:21:16.198] noisy clients
+[20:21:57.207] Round 38: client 6 loss: 0.38457577648211505
+[20:21:57.207] clean clients
+[20:22:39.406] Round 38: client 7 loss: 0.08081361412654048
+[20:22:39.406] noisy clients
+[20:23:13.742] Round 38: client 8 loss: 0.39727294526100165
+[20:23:13.742] noisy clients
+[20:23:42.902] Round 38: client 9 loss: 0.3881375702572804
+[20:23:42.902] noisy clients
+[20:24:13.708] Round 38: client 10 loss: 0.39715645531261407
+[20:24:13.708] clean clients
+[20:25:06.278] Round 38: client 11 loss: 0.09303493468521984
+[20:25:06.278] noisy clients
+[20:25:33.847] Round 38: client 12 loss: 0.36411086156013167
+[20:25:33.847] noisy clients
+[20:26:26.482] Round 38: client 13 loss: 0.3210359944059299
+[20:26:26.482] clean clients
+[20:26:46.465] Round 38: client 14 loss: 0.0846014819505314
+[20:26:46.466] clean clients
+[20:27:40.018] Round 38: client 15 loss: 0.08165806466218165
+[20:27:40.019] noisy clients
+[20:28:12.927] Round 38: client 16 loss: 0.43903556471197014
+[20:28:12.928] noisy clients
+[20:29:12.895] Round 38: client 17 loss: 0.3584074971717518
+[20:29:12.896] clean clients
+[20:29:46.682] Round 38: client 18 loss: 0.08810726657430543
+[20:29:46.683] clean clients
+[20:30:21.714] Round 38: client 19 loss: 0.08727442234165358
+[20:30:33.915] ******** round: 38, acc: 0.9709, bacc: 0.9709 ********
+[20:30:33.916] [[4865  135]
+ [ 156 4844]]
+[20:30:33.917] best bacc: 0.9712, now bacc: 0.9709
+[20:30:33.918] 
+
+[20:30:33.925] clean clients
+[20:31:09.666] Round 39: client 0 loss: 0.08827835604760971
+[20:31:09.666] noisy clients
+[20:31:54.757] Round 39: client 1 loss: 0.3465343294133033
+[20:31:54.757] clean clients
+[20:32:43.070] Round 39: client 2 loss: 0.0838824560366678
+[20:32:43.071] noisy clients
+[20:33:15.505] Round 39: client 3 loss: 0.3490306435685072
+[20:33:15.505] clean clients
+[20:33:52.655] Round 39: client 4 loss: 0.09476098660055453
+[20:33:52.656] clean clients
+[20:34:41.247] Round 39: client 5 loss: 0.10523187499010127
+[20:34:41.247] noisy clients
+[20:35:21.570] Round 39: client 6 loss: 0.36670403508912947
+[20:35:21.570] clean clients
+[20:36:04.142] Round 39: client 7 loss: 0.08167157947600072
+[20:36:04.142] noisy clients
+[20:36:38.197] Round 39: client 8 loss: 0.3761545010328292
+[20:36:38.197] noisy clients
+[20:37:06.465] Round 39: client 9 loss: 0.3692022552677229
+[20:37:06.466] noisy clients
+[20:37:36.474] Round 39: client 10 loss: 0.3807224903669622
+[20:37:36.474] clean clients
+[20:38:27.598] Round 39: client 11 loss: 0.09371230621002695
+[20:38:27.598] noisy clients
+[20:38:54.035] Round 39: client 12 loss: 0.3480298676547852
+[20:38:54.035] noisy clients
+[20:39:46.165] Round 39: client 13 loss: 0.30378335337608287
+[20:39:46.165] clean clients
+[20:40:05.193] Round 39: client 14 loss: 0.09049687423432869
+[20:40:05.193] clean clients
+[20:40:56.945] Round 39: client 15 loss: 0.08070745262763206
+[20:40:56.945] noisy clients
+[20:41:28.397] Round 39: client 16 loss: 0.4177677332590788
+[20:41:28.397] noisy clients
+[20:42:27.250] Round 39: client 17 loss: 0.33958581386695263
+[20:42:27.250] clean clients
+[20:42:59.799] Round 39: client 18 loss: 0.0863165657960724
+[20:42:59.799] clean clients
+[20:43:33.966] Round 39: client 19 loss: 0.08831581659361619
+[20:43:46.527] ******** round: 39, acc: 0.9698, bacc: 0.9698 ********
+[20:43:46.527] [[4836  164]
+ [ 138 4862]]
+[20:43:46.529] best bacc: 0.9712, now bacc: 0.9698
+[20:43:46.529] 
+
+[20:43:46.618] last:
+[20:43:46.618] 0.9702599999999999
+[20:43:46.618] best:
+[20:43:46.618] 0.9712
